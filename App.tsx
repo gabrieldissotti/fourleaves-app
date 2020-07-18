@@ -1,11 +1,19 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React, { useEffect, useCallback } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
+import { updateApp } from './src/services/expo';
+
 export default function App() {
+  useEffect(() => {
+    if (__DEV__) return;
+
+    updateApp()
+  }, [])
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <Text>alguma coisa maneira!</Text>
       <StatusBar style="auto" />
     </View>
   );
