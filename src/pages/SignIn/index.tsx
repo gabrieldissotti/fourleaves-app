@@ -8,8 +8,8 @@ import logoImg from '../../../assets/example-people.png';
 const SignIn: React.FC = () => {
   return (
     <Container>
-      <Image source={logoImg} />
-      <Title>Gabriel Dissotti do Nascimento Rodrigues</Title>
+      {/* <Image source={logoImg} />
+      <Title>Gabriel Dissotti do Nascimento Rodrigues</Title> */}
     </Container>
   );
 };
