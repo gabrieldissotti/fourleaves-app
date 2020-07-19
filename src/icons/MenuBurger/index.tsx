@@ -1,26 +1,27 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useIsDrawerOpen } from '@react-navigation/drawer';
 
 import { Container, FullBar, LowerBar } from './styles';
 
 const MenuBurger: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const isDrawerOpen = useIsDrawerOpen();
 
   return (
-    <Container onPress={() => setIsOpen(!isOpen)}>
-      {isOpen ? (
+    <Container>
+      {!isDrawerOpen ? (
         <>
           <LowerBar />
-          <FullBar/>
+          <FullBar />
           <LowerBar />
         </>
       ) : (
-          <>
-            <FullBar rotate />
-            <FullBar invertedRotate />
-          </>
+        <>
+          <FullBar rotate />
+          <FullBar invertedRotate />
+        </>
       )}
     </Container>
   );
-}
+};
 
 export default MenuBurger;

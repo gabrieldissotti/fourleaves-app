@@ -1,10 +1,13 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+
+import Header from '../layouts/Header';
+import colors from '../theme/colors';
 
 import SignIn from '../pages/SignIn';
-import colors from '../theme/colors';
-import Header from '../layouts/Header';
 
+const Drawer = createDrawerNavigator();
 const Auth = createStackNavigator();
 
 const AuthRoutes: React.FC = () => (
@@ -14,16 +17,22 @@ const AuthRoutes: React.FC = () => (
         backgroundColor: colors.primarylight2,
         borderBottomLeftRadius: 30,
         borderBottomRightRadius: 30,
-        height: 139
+        height: 139,
       },
       cardStyle: {
         backgroundColor: colors.white,
       },
-      headerTitle: props => <Header {...props} />
+      headerTitle: props => <Header {...props} />, // eslint-disable-line
     }}
   >
     <Auth.Screen name="SignIn" component={SignIn} />
   </Auth.Navigator>
 );
 
-export default AuthRoutes;
+const DrawerRoutes: React.FC = () => (
+  <Drawer.Navigator initialRouteName="AuthRoutes">
+    <Drawer.Screen name="AuthRoutes" component={AuthRoutes} />
+  </Drawer.Navigator>
+);
+
+export default DrawerRoutes;
