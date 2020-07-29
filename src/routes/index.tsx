@@ -24,6 +24,7 @@ const AuthRoutes: React.FC = () => (
       },
       headerTitle: props => <Header {...props} />, // eslint-disable-line
     }}
+    initialRouteName='SignIn'
   >
     <Auth.Screen name="SignIn" component={SignIn} />
   </Auth.Navigator>
