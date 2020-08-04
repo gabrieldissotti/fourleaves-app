@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Image, Text, View, ViewStyle } from 'react-native';
-import Animated from 'react-native-reanimated';
+import Animated, { concat } from 'react-native-reanimated';
 import { Container } from './styles';
 
 import {
@@ -72,15 +72,22 @@ const DrawerContainer: React.FC = () => {
     outputRange: [1, 0.8],
   });
 
+  const rotate = Animated.interpolate(progress, {
+    inputRange: [0, 1],
+    outputRange: [0, -7],
+  });
+
+
   const borderRadius = Animated.interpolate(progress, {
     inputRange: [0, 1],
-    outputRange: [0, 12],
+    outputRange: [0, 16],
   });
 
   const screensStyles: IScreenStyles | any = { 
     borderRadius, 
     transform: [
       { scale },
+      { rotate: concat(rotate, 'deg') }
     ] 
   };
 
@@ -90,7 +97,7 @@ const DrawerContainer: React.FC = () => {
         initialRouteName="SignIn"
         drawerType="slide"
         overlayColor="transparent"
-        drawerStyle={{ width: '50%', backgroundColor: 'transparent' }}
+        drawerStyle={{ width: '70%', backgroundColor: 'transparent' }}
         drawerContentOptions={{
           activeBackgroundColor: 'transparent',
           activeTintColor: 'green',
