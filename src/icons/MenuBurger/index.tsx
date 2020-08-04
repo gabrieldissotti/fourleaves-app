@@ -3,11 +3,11 @@ import { useIsDrawerOpen } from '@react-navigation/drawer';
 
 import { Container, FullBar, LowerBar } from './styles';
 
-const MenuBurger: React.FC = () => {
+const MenuBurger: React.FC = (props: any) => {
   const isDrawerOpen = useIsDrawerOpen();
 
   return (
-    <Container>
+    <Container {...props}>
       {!isDrawerOpen ? (
         <>
           <LowerBar />

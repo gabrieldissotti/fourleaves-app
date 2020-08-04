@@ -1,15 +1,9 @@
 import 'react-native-gesture-handler';
 
-import { StatusBar } from 'expo-status-bar';
-import React, { useEffect, useCallback } from 'react';
-import { View } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
+import React, { useEffect } from 'react';
 
 import { updateApp } from './services/expo';
-
-import colors from './theme/colors';
-
-import Routes from './routes';
+import Navigation from './routes';
 
 export default function App() {
   useEffect(() => {
@@ -18,12 +12,5 @@ export default function App() {
     updateApp();
   }, []);
 
-  return (
-    <NavigationContainer>
-      <StatusBar backgroundColor="transparent" />
-      <View style={{ backgroundColor: colors.white, flex: 1 }}>
-        <Routes />
-      </View>
-    </NavigationContainer>
-  );
+  return <Navigation />;
 }

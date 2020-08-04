@@ -9,7 +9,7 @@ export const Container = styled.View`
   margin-bottom: 24px;
 `;
 
-export const Icon = styled(MenuBurger)``;
+export const Icon: any = styled(MenuBurger)``;
 
 export const Title = styled(PrimaryHeading3Bold)`
   color: ${colors.primarydark7};

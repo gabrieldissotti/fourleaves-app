@@ -1,11 +1,16 @@
 import React from 'react';
 
 import { Container, Icon, Title, Description } from './styles';
+import { INavigation } from '../../interfaces/general';
 
-const Header: React.FC = () => {
+interface IProps {
+  navigation: INavigation;
+}
+
+const Header: React.FC<IProps> = ({ navigation }) => {
   return (
-    <Container>
-      <Icon />
+    <Container >
+      <Icon onPress={() => navigation.openDrawer()}/>
       <Title>fourleav.es</Title>
       <Description>uma nova experiência em sortear</Description>
     </Container>
