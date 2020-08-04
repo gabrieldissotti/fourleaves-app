@@ -74,13 +74,13 @@ const DrawerContainer: React.FC = () => {
 
   const rotate = Animated.interpolate(progress, {
     inputRange: [0, 1],
-    outputRange: [0, -7],
+    outputRange: [0, -6],
   });
 
 
   const borderRadius = Animated.interpolate(progress, {
     inputRange: [0, 1],
-    outputRange: [0, 16],
+    outputRange: [0, 24],
   });
 
   const screensStyles: IScreenStyles | any = { 
@@ -88,7 +88,7 @@ const DrawerContainer: React.FC = () => {
     transform: [
       { scale },
       { rotate: concat(rotate, 'deg') }
-    ] 
+    ],
   };
 
   return (
