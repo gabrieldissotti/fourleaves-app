@@ -1,26 +1,15 @@
 import React from 'react';
-import { ViewStyle, Text, Button } from 'react-native';
 import Animated from 'react-native-reanimated';
 import { createStackNavigator } from '@react-navigation/stack';
 import Header from '../../layouts/Header';
 import colors from '../../theme/colors';
 
 import { SignIn, SignUp } from '../../pages';
-import { INavigation } from '../../interfaces/general';
+import { IProps } from './interfaces';
 
 import { Shadow } from './styles';
 
 const Stack = createStackNavigator();
-
-interface IStyle extends ViewStyle {
-  borderRadius: number;
-  transform: { scale: number }[];
-}
-
-interface IProps {
-  style: IStyle;
-  navigation: INavigation;
-}
 
 const Screens: React.FC<IProps> = ({ navigation, style }) => {
   const options = {
