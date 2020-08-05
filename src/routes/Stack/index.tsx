@@ -8,7 +8,7 @@ import colors from '../../theme/colors';
 import { SignIn, SignUp } from '../../pages';
 import { INavigation } from '../../interfaces/general';
 
-import { Container, Shadow } from './styles';
+import { Shadow } from './styles';
 
 const Stack = createStackNavigator();
 

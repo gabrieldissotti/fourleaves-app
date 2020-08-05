@@ -1,6 +1,5 @@
 import styled from 'styled-components/native';
-import { PrimaryHeading3Bold, PrimaryParagraphBold } from '../../theme/fonts';
-import colors from '../../theme/colors';
+import { typography, colors } from '../../theme';
 import MenuBurger from '../../icons/MenuBurger';
 
 export const Container = styled.View`
@@ -11,10 +10,10 @@ export const Container = styled.View`
 
 export const Icon: any = styled(MenuBurger)``;
 
-export const Title = styled(PrimaryHeading3Bold)`
+export const Title = styled(typography.PrimaryHeading3Bold)`
   color: ${colors.primarydark7};
 `;
 
-export const Description = styled(PrimaryParagraphBold)`
+export const Description = styled(typography.PrimaryParagraphBold)`
   color: ${colors.primarydark7};
 `;

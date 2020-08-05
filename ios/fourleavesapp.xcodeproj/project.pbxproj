@@ -38,6 +38,12 @@
 		3748DFB1467748C5AC8D7F99 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EF71258CCCBB42B4A665DC6F /* OpenSans-Regular.ttf */; };
 		D35BCBF92615467FBF6CEAE7 /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5B790392B77E42B787E6E2D0 /* OpenSans-SemiBold.ttf */; };
 		41A716117FC64AAA90E6AA34 /* OpenSans-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9066F6F62F174F6BBB5DAAFB /* OpenSans-SemiBoldItalic.ttf */; };
+		4E190B930C4C4896B27403D4 /* example-page.png in Resources */ = {isa = PBXBuildFile; fileRef = ACB9BE8FC5CB49C481801209 /* example-page.png */; };
+		1E4FF2A908A541BFBFD34B54 /* example-page@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 959FC14698A04000AE86BFFF /* example-page@2x.png */; };
+		1A8B3F843E0648C493FE0AA3 /* example-people.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D4FFD35B9BB402C965ED3F8 /* example-people.png */; };
+		7BADA4E8AF9D42EFAC4A051D /* example-people@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AED82E72BA240BE971D7319 /* example-people@2x.png */; };
+		242114C2C0604F2D8E48984B /* example-post.png in Resources */ = {isa = PBXBuildFile; fileRef = 8866C406535643518355B362 /* example-post.png */; };
+		70DC198BE84041FEA7B675A2 /* example-post@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AEFAE85219D4245989E6492 /* example-post@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +86,12 @@
 		EF71258CCCBB42B4A665DC6F /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; name = "OpenSans-Regular.ttf"; path = "../assets/fonts/Open_Sans/OpenSans-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		5B790392B77E42B787E6E2D0 /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; name = "OpenSans-SemiBold.ttf"; path = "../assets/fonts/Open_Sans/OpenSans-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		9066F6F62F174F6BBB5DAAFB /* OpenSans-SemiBoldItalic.ttf */ = {isa = PBXFileReference; name = "OpenSans-SemiBoldItalic.ttf"; path = "../assets/fonts/Open_Sans/OpenSans-SemiBoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		ACB9BE8FC5CB49C481801209 /* example-page.png */ = {isa = PBXFileReference; name = "example-page.png"; path = "../assets/example-page.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		959FC14698A04000AE86BFFF /* example-page@2x.png */ = {isa = PBXFileReference; name = "example-page@2x.png"; path = "../assets/example-page@2x.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7D4FFD35B9BB402C965ED3F8 /* example-people.png */ = {isa = PBXFileReference; name = "example-people.png"; path = "../assets/example-people.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		1AED82E72BA240BE971D7319 /* example-people@2x.png */ = {isa = PBXFileReference; name = "example-people@2x.png"; path = "../assets/example-people@2x.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8866C406535643518355B362 /* example-post.png */ = {isa = PBXFileReference; name = "example-post.png"; path = "../assets/example-post.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5AEFAE85219D4245989E6492 /* example-post@2x.png */ = {isa = PBXFileReference; name = "example-post@2x.png"; path = "../assets/example-post@2x.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +207,12 @@
 				EF71258CCCBB42B4A665DC6F /* OpenSans-Regular.ttf */,
 				5B790392B77E42B787E6E2D0 /* OpenSans-SemiBold.ttf */,
 				9066F6F62F174F6BBB5DAAFB /* OpenSans-SemiBoldItalic.ttf */,
+				ACB9BE8FC5CB49C481801209 /* example-page.png */,
+				959FC14698A04000AE86BFFF /* example-page@2x.png */,
+				7D4FFD35B9BB402C965ED3F8 /* example-people.png */,
+				1AED82E72BA240BE971D7319 /* example-people@2x.png */,
+				8866C406535643518355B362 /* example-post.png */,
+				5AEFAE85219D4245989E6492 /* example-post@2x.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -287,6 +305,12 @@
 				3748DFB1467748C5AC8D7F99 /* OpenSans-Regular.ttf in Resources */,
 				D35BCBF92615467FBF6CEAE7 /* OpenSans-SemiBold.ttf in Resources */,
 				41A716117FC64AAA90E6AA34 /* OpenSans-SemiBoldItalic.ttf in Resources */,
+				4E190B930C4C4896B27403D4 /* example-page.png in Resources */,
+				1E4FF2A908A541BFBFD34B54 /* example-page@2x.png in Resources */,
+				1A8B3F843E0648C493FE0AA3 /* example-people.png in Resources */,
+				7BADA4E8AF9D42EFAC4A051D /* example-people@2x.png in Resources */,
+				242114C2C0604F2D8E48984B /* example-post.png in Resources */,
+				70DC198BE84041FEA7B675A2 /* example-post@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

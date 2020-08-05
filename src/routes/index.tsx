@@ -3,7 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 
 import DrawerContainer from './Drawer';
 
-const Navigation = () => (
+const Navigation: React.FC = () => (
   <NavigationContainer>
     <DrawerContainer />
   </NavigationContainer>
