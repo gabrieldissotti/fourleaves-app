@@ -1,14 +1,11 @@
 import React from 'react';
 import { Image, Text, View } from 'react-native';
 
-import {
-  DrawerContentScrollView,
-  DrawerItem,
-} from '@react-navigation/drawer';
+import { DrawerContentScrollView, DrawerItem } from '@react-navigation/drawer';
 import { Container } from './styles';
 
 const Content: React.FC<any> = ({ navigation, ...rest }) => (
-  <DrawerContentScrollView {...rest}>
+  <DrawerContentScrollView {...rest}> { /* eslint-disable-line */}
     <Container>
       <View>
         <Image
@@ -22,9 +19,7 @@ const Content: React.FC<any> = ({ navigation, ...rest }) => (
           style={{ borderRadius: 30 }}
         />
 
-        <Text>
-          Jacob Jones
-        </Text>
+        <Text>Jacob Jones</Text>
       </View>
 
       <View>
@@ -67,6 +62,6 @@ const Content: React.FC<any> = ({ navigation, ...rest }) => (
       </View>
     </Container>
   </DrawerContentScrollView>
-)
+);
 
 export default Content;

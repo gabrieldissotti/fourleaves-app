@@ -6,10 +6,9 @@ export const Shadow = styled(Animated.View)`
   /* left: 34px; */
   left: 7.5%;
   top: 8%;
-  
+
   width: 24px;
   height: 90%;
 
-  background: rgba(56, 42, 10, .14);
+  background: rgba(56, 42, 10, 0.14);
 `;
-

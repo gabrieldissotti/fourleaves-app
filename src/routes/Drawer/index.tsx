@@ -6,13 +6,13 @@ import { Container } from './styles';
 import { screensAnimations } from './animations';
 
 import Screens from '../Stack';
-import Content from './components/Content'
+import Content from './components/Content';
 
 const Drawer = createDrawerNavigator();
 
 const DrawerContainer: React.FC = () => {
   const [progress, setProgress] = useState<Animated.Node<number>>(
-    new Animated.Value(0)
+    new Animated.Value(0),
   );
 
   const animations = screensAnimations(progress);
@@ -33,11 +33,11 @@ const DrawerContainer: React.FC = () => {
         drawerContent={props => {
           setProgress(props.progress);
 
-          return <Content {...props} />;
+          return <Content {...props} />; {/* eslint-disable-line */}
         }}
       >
         <Drawer.Screen name="Screens">
-          {props => <Screens {...props} style={animations} />}
+          {props => <Screens {...props} style={animations} /> /* eslint-disable-line */} 
         </Drawer.Screen>
       </Drawer.Navigator>
     </Container>

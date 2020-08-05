@@ -33,12 +33,12 @@ const Screens: React.FC<IProps> = ({ navigation, style }) => {
     cardStyle: {
       backgroundColor: colors.white,
     },
-    headerTitle: (props: any) => <Header {...props} navigation={navigation} />,
+    headerTitle: (props: any) => <Header {...props} navigation={navigation} />, //eslint-disable-line
   };
 
   return (
     <>
-      <Shadow  style={[{ flex: 1, overflow: 'hidden' }, style]} />
+      <Shadow style={[{ flex: 1, overflow: 'hidden' }, style]} />
       <Animated.View style={[{ flex: 1, overflow: 'hidden' }, style]}>
         <Stack.Navigator screenOptions={options}>
           <Stack.Screen name="SignIn" component={SignIn} />

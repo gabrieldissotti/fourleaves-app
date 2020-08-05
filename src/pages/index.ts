@@ -1,7 +1,4 @@
-import { default as SignIn} from './SignIn';
-import { default as SignUp} from './SignUp';
+import SignIn from './SignIn';
+import SignUp from './SignUp';
 
-export {
-  SignIn,
-  SignUp
-}
+export { SignIn, SignUp };

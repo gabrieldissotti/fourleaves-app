@@ -6,28 +6,24 @@ export const screensAnimations = (progress: Animated.Node<number>) => {
     inputRange: [0, 1],
     outputRange: [1, 0.8],
   });
-  
-  const rotate = concat((
+
+  const rotate = concat(
     Animated.interpolate(progress, {
       inputRange: [0, 1],
       outputRange: [0, -6],
-    })
-  ),'deg');
-  
-  
+    }),
+    'deg',
+  );
+
   const borderRadius = Animated.interpolate(progress, {
     inputRange: [0, 1],
     outputRange: [0, 24],
   });
-  
-  
-  const screensStyles: IScreenStyles | any = { 
-    borderRadius, 
-    transform: [
-      { scale },
-      { rotate }
-    ],
-  }
+
+  const screensStyles: IScreenStyles | any = {
+    borderRadius,
+    transform: [{ scale }, { rotate }],
+  };
 
   return screensStyles;
-}
+};

@@ -39,6 +39,7 @@
         ]
       }
     ],
+    "react/prop-types": [0, { "ignore": true }],
     "import/prefer-default-export": "off",
     "import/extensions": [
       "error",

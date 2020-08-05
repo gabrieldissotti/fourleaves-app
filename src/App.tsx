@@ -13,9 +13,9 @@ export default function App() {
     updateApp();
   }, []);
 
-  return  (
+  return (
     <Fonts>
       <Navigation />
     </Fonts>
-  )
+  );
 }

@@ -1,3 +1,5 @@
+/* eslint camelcase: "off" */
+
 import {
   useFonts,
   Nunito_200ExtraLight,
@@ -38,4 +40,3 @@ const Fonts: React.FC = ({ children }: any) => {
 };
 
 export default Fonts;
-
