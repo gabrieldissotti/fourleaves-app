@@ -15,32 +15,54 @@ const Content: React.FC<any> = ({ navigation, ...rest }) => (
           source={{
             uri:
               'https://avatars2.githubusercontent.com/u/33178519?s=460&u=07dc9223c94ce98f4c64fc397d592ee56b24df11&v=4',
-            height: 45,
-            width: 45,
+            height: 60,
+            width: 60,
           }}
           resizeMode="center"
           style={{ borderRadius: 30 }}
         />
 
         <Text>
-          Gabriel Dissotti
+          Jacob Jones
         </Text>
-        <Text>Back-end Developer</Text>
       </View>
 
       <View>
         <DrawerItem
-          label="SignIn"
+          label="Sorteio no faceook"
+          to="SignIn"
           onPress={() => navigation.navigate('SignIn')}
-          labelStyle={{ marginLeft: -16 }}
           // icon={() => <AntDesign name="SignIn" size={16} />}
         />
 
         <DrawerItem
-          label="SignUp"
+          label="Como funciona"
+          to="SignIn"
           onPress={() => navigation.navigate('SignUp')}
-          labelStyle={{ marginLeft: -16 }}
-          // icon={() => <AntDesign name="message1" size={16} />}
+        />
+
+        <DrawerItem
+          label="Contate-nos"
+          to="SignIn"
+          onPress={() => navigation.navigate('SignUp')}
+        />
+
+        <DrawerItem
+          label="Compartilhar"
+          to="SignIn"
+          onPress={() => navigation.navigate('SignUp')}
+        />
+
+        <DrawerItem
+          label="Termos e Políticas"
+          to="SignIn"
+          onPress={() => navigation.navigate('SignUp')}
+        />
+
+        <DrawerItem
+          label="Sair"
+          to="SignIn"
+          onPress={() => navigation.navigate('SignUp')}
         />
       </View>
     </Container>
