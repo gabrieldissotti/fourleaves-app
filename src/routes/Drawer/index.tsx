@@ -37,7 +37,7 @@ const DrawerContainer: React.FC = () => {
         }}
       >
         <Drawer.Screen name="Screens">
-          {props => <Screens {...props} style={animations} /> /* eslint-disable-line */} 
+          {props => <Screens {...props} style={animations} />}
         </Drawer.Screen>
       </Drawer.Navigator>
     </Container>

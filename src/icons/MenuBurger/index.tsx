@@ -7,7 +7,7 @@ const MenuBurger: React.FC = (props: any) => {
   const isDrawerOpen = useIsDrawerOpen();
 
   return (
-    <Container {...props}> { /* eslint-disable-line */}
+    <Container {...props}>
       {!isDrawerOpen ? (
         <>
           <LowerBar />

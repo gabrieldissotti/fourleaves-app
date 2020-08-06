@@ -5,7 +5,7 @@ import { DrawerContentScrollView, DrawerItem } from '@react-navigation/drawer';
 import { Container } from './styles';
 
 const Content: React.FC<any> = ({ navigation, ...rest }) => (
-  <DrawerContentScrollView {...rest}> { /* eslint-disable-line */}
+  <DrawerContentScrollView {...rest}>
     <Container>
       <View>
         <Image
