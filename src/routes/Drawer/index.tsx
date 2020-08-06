@@ -33,7 +33,7 @@ const DrawerContainer: React.FC = () => {
         drawerContent={props => {
           setProgress(props.progress);
 
-          return <Content {...props} />; {/* eslint-disable-line */}
+          return <Content {...props} />;
         }}
       >
         <Drawer.Screen name="Screens">

@@ -3,7 +3,6 @@ import Animated from 'react-native-reanimated';
 
 export const Shadow = styled(Animated.View)`
   position: absolute;
-  /* left: 34px; */
   left: 7.5%;
   top: 8%;
 
