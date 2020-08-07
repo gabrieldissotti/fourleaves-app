@@ -1,5 +1,6 @@
-import { DrawerNavigationProp } from '@react-navigation/drawer';
+import { ReactNode } from 'react';
 import { ViewStyle } from 'react-native';
+import { DrawerNavigationProp } from '@react-navigation/drawer';
 
 interface INavigation extends DrawerNavigationProp<any, any> {
   openDrawer: () => void;
@@ -14,4 +15,8 @@ interface IStyle extends ViewStyle {
 export interface IProps {
   style: IStyle;
   navigation: INavigation;
+}
+
+export interface IStackNavigator {
+  headerLeft: ReactNode | null | undefined;
 }

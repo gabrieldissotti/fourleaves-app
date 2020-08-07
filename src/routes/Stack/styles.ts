@@ -10,4 +10,6 @@ export const Shadow = styled(Animated.View)`
   height: 90%;
 
   background: rgba(56, 42, 10, 0.14);
+
+  filter: blur(4px);
 `;
