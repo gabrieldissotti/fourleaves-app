@@ -3,6 +3,8 @@ import React, { useMemo } from 'react';
 // import { Container } from './styles';
 import Left from './components/Left';
 import Right from './components/Right';
+import Instagram from './components/Instagram';
+import Facebook from './components/Facebook';
 
 import { IIconFamilyProps } from '../interfaces';
 
@@ -11,6 +13,8 @@ const IconsMind: React.FC<IIconFamilyProps> = ({ icon, color }) => {
     () => ({
       left: Left,
       right: Right,
+      instagram: Instagram,
+      facebook: Facebook,
     }),
     [],
   );

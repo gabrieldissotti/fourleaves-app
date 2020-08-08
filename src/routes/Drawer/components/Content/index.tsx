@@ -10,7 +10,10 @@ import {
   Frame,
   MenuItem,
   Dash,
+  Socials,
 } from './styles';
+
+import { SocialNetwork } from '../../../../components/Buttons';
 
 const Content: React.FC<any> = ({ navigation, ...rest }) => {
   const [isFocused, setIsFocused] = useState<string>('SignIn');
@@ -80,6 +83,10 @@ const Content: React.FC<any> = ({ navigation, ...rest }) => {
             />
           </MenuItem>
         </View>
+        <Socials>
+          <SocialNetwork type="facebook" />
+          <SocialNetwork type="instagram" />
+        </Socials>
       </Container>
     </DrawerContentScrollView>
   );

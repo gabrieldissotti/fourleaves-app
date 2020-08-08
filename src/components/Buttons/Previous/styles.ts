@@ -27,8 +27,9 @@ export const Container = styled.TouchableOpacity<IContainer>`
     `}
 `;
 
-export const IconsMind = styled(IconsMindLib)`
-  color: ${colors.white};
+export const IconsMind = styled(IconsMindLib).attrs({
+  color: colors.white,
+})`
   height: 24;
   width: 16;
 `;

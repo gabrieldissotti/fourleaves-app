@@ -6,6 +6,7 @@ import { typography, colors } from '../../../../theme';
 import { IDrawerItem } from './interfaces';
 
 export const Container = styled.View`
+  position: relative;
   padding: ${pxToRem(32)} ${pxToRem(40)};
 `;
 
@@ -70,4 +71,15 @@ export const Dash = styled(Animated.View)`
   position: absolute;
   left: ${pxToRem(7)};
   bottom: ${pxToRem(12)};
+`;
+
+export const Socials = styled.View`
+  flex-direction: row;
+  justify-content: space-between;
+
+  width: ${pxToRem(114)};
+
+  position: fixed;
+  left: ${pxToRem(40)};
+  bottom: ${pxToRem(40)};
 `;

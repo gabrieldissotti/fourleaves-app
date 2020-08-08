@@ -7,7 +7,7 @@ import { Previous, Next } from '../../components/Buttons';
 const SignIn: React.FC = () => {
   return (
     <Container>
-      <Previous />
+      <Previous isOpen />
       <Next text="Entrar com o facebook" />
     </Container>
   );
