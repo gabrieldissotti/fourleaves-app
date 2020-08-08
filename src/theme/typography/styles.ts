@@ -17,6 +17,14 @@ export const PrimaryParagraphBold = styled.Text`
   color: red;
 `;
 
+export const PrimaryParagraph = styled.Text`
+  font-family: 'Nunito_400Regular';
+  font-size: ${pxToRem(16)};
+  line-height: ${pxToRem(24)};
+  letter-spacing: 0;
+  color: red;
+`;
+
 export const PrimaryParagraphSemiBold = styled.Text`
   font-family: 'Nunito_600SemiBold';
   font-size: ${pxToRem(16)};

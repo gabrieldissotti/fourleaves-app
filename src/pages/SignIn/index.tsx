@@ -1,15 +1,13 @@
 import React from 'react';
-import { Image } from 'react-native';
 
-import { Container, Title } from './styles';
+import { Container } from './styles';
 
-import logoImg from '../../../assets/example-people.png';
+import { Previous } from '../../components/Buttons';
 
 const SignIn: React.FC = () => {
   return (
     <Container>
-      {/* <Image source={logoImg} />
-      <Title>Gabriel Dissotti do Nascimento Rodrigues</Title> */}
+      <Previous />
     </Container>
   );
 };
