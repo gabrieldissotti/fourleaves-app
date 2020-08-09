@@ -5,6 +5,7 @@ import Left from './components/Left';
 import Right from './components/Right';
 import Instagram from './components/Instagram';
 import Facebook from './components/Facebook';
+import Like from './components/Like';
 
 import { IIconFamilyProps } from '../interfaces';
 
@@ -15,6 +16,7 @@ const IconsMind: React.FC<IIconFamilyProps> = ({ icon, color }) => {
       right: Right,
       instagram: Instagram,
       facebook: Facebook,
+      like: Like,
     }),
     [],
   );

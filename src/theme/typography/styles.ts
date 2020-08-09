@@ -32,3 +32,11 @@ export const PrimaryParagraphSemiBold = styled.Text`
   letter-spacing: 0;
   color: red;
 `;
+
+export const PrimarySmall = styled.Text`
+  font-family: 'Nunito_400Regular';
+  font-size: ${pxToRem(14)};
+  line-height: ${pxToRem(21)};
+  letter-spacing: 0;
+  color: red;
+`;
