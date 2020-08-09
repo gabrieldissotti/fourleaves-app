@@ -1,5 +1,4 @@
 import React, { useCallback } from 'react';
-
 import { FlatList } from './styles';
 
 import { Item } from './components';

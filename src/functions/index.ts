@@ -1,4 +1,8 @@
-export const pxToRem = (px: number): string => `${String(px / 16)}rem`;
+import { Platform } from 'react-native';
+
+export const pxOrRem = (px: number): string | number => {
+  return Platform.OS === 'web' ? `${String(px / 16)}rem` : `${px}px`;
+};
 
 export const hexToRGBA = (hexCode: string, opacity: number): string => {
   let hex = hexCode.replace('#', '');

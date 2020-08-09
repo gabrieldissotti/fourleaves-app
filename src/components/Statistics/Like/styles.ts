@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
 import { IconsMind as IconsMindLib } from '../../../icons';
 import { colors, typography } from '../../../theme';
-import { pxToRem } from '../../../functions';
+import { pxOrRem } from '../../../functions';
 
 export const Container = styled.View`
   flex-direction: row;
@@ -10,7 +10,6 @@ export const Container = styled.View`
 
 export const Text = styled(typography.PrimarySmall)`
   color: ${colors.secondary};
-  margin-left: ${pxToRem(6)};
 `;
 
 export const IconsMind = styled(IconsMindLib).attrs({
@@ -18,4 +17,6 @@ export const IconsMind = styled(IconsMindLib).attrs({
 })`
   height: 24;
   width: 16;
+
+  margin-right: ${pxOrRem(6)};
 `;

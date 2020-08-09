@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
 import { colors } from '../../../theme';
-import { pxToRem, hexToRGBA } from '../../../functions';
+import { pxOrRem, hexToRGBA } from '../../../functions';
 import { IconsMind as IconsMindLib } from '../../../icons';
 
 export const Container = styled.TouchableOpacity.attrs({
@@ -14,11 +14,11 @@ export const Container = styled.TouchableOpacity.attrs({
   elevation: 1,
 })`
   background: ${colors.primary};
-  border-radius: ${pxToRem(16)};
+  border-radius: ${pxOrRem(16)};
 
-  height: ${pxToRem(44)};
-  width: ${pxToRem(44)};
-  border-radius: ${pxToRem(22)};
+  height: ${pxOrRem(44)};
+  width: ${pxOrRem(44)};
+  border-radius: ${pxOrRem(22)};
 
   align-items: center;
   justify-content: center;
