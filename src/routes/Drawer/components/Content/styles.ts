@@ -7,22 +7,30 @@ import { IDrawerItem } from './interfaces';
 
 export const Container = styled.View`
   position: relative;
-  padding: ${pxOrRem(32)} ${pxOrRem(40)};
+  padding: ${pxOrRem(32)} ${pxOrRem(20)};
+
+  background: yellowgreen;
+
+  /* height: 100vh; */
 `;
 
-export const DrawerItem = styled<IDrawerItem | any>(DrawerItemLib).attrs({
-  inactiveTintColor: colors.secondary,
-  activeTintColor: colors.secondary,
-})`
-  margin: 0;
-  padding: 0;
-
-  ${({ isExit }: any) =>
-    isExit &&
-    css`
-      opacity: 0.5;
-    `}
-`;
+export const DrawerItem = styled<IDrawerItem | any>(DrawerItemLib).attrs(
+  props => ({
+    inactiveTintColor: colors.secondary,
+    activeTintColor: colors.secondary,
+    labelStyle: {
+      fontFamily: 'Nunito_700Bold',
+      fontSize: 16,
+      letterSpacing: 0,
+      lineHeight: 24,
+    },
+    style: {
+      padding: 0,
+      margin: 0,
+      opacity: props.isExit ? 0.5 : 1,
+    },
+  }),
+)``;
 
 export const Header = styled.View`
   display: flex;
@@ -54,22 +62,18 @@ export const Photo = styled.Image`
   border-radius: ${pxOrRem(31.5)};
 `;
 
-export const MenuItem = styled(typography.PrimaryParagraphSemiBold)`
-  position: relative;
-
-  padding: 0;
-`;
+export const MenuItem = styled.View``;
 
 export const Dash = styled(Animated.View)`
-  width: ${pxOrRem(22)};
+  width: ${pxOrRem(18)};
   height: ${pxOrRem(3)};
 
   background: rgba(255, 255, 255, 0.9);
   border-radius: ${pxOrRem(1.5)};
 
   position: absolute;
-  left: ${pxOrRem(7)};
-  bottom: ${pxOrRem(12)};
+  left: ${pxOrRem(16)};
+  bottom: ${pxOrRem(14)};
 `;
 
 export const Socials = styled.View`
@@ -78,7 +82,7 @@ export const Socials = styled.View`
 
   width: ${pxOrRem(114)};
 
-  position: fixed;
+  position: absolute;
   left: ${pxOrRem(40)};
   bottom: ${pxOrRem(40)};
 `;

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Animated, { concat } from 'react-native-reanimated';
+import Animated from 'react-native-reanimated';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 
 import { Container } from './styles';
@@ -26,8 +26,6 @@ const DrawerContainer: React.FC = () => {
         drawerStyle={{ width: '70%', backgroundColor: 'transparent' }}
         drawerContentOptions={{
           activeBackgroundColor: 'transparent',
-          activeTintColor: 'green',
-          inactiveTintColor: 'green',
         }}
         sceneContainerStyle={{ backgroundColor: 'transparent' }}
         drawerContent={props => {

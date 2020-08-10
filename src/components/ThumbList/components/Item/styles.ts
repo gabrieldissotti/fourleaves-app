@@ -11,7 +11,6 @@ export const Container = styled.TouchableOpacity`
 
   border-bottom-width: ${pxOrRem(1)};
   border-bottom-color: ${colors.graylight8};
-  border-bottom-style: solid;
 
   flex-direction: row;
   align-items: center;

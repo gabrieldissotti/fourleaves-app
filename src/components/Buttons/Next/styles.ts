@@ -17,7 +17,7 @@ export const Container = styled.TouchableOpacity`
   border-top-left-radius: ${pxOrRem(16)};
   border-bottom-left-radius: ${pxOrRem(16)};
 
-  position: fixed;
+  position: absolute;
   bottom: ${pxOrRem(40)};
   right: 0;
 `;
