@@ -24,71 +24,69 @@ const Content: React.FC<any> = ({ navigation, ...rest }) => {
   }, []);
 
   return (
-    <DrawerContentScrollView {...rest}>
-      <Container>
-        <Header>
-          <Frame>
-            <Photo
-              source={{
-                uri:
-                  'https://avatars2.githubusercontent.com/u/33178519?s=460&u=07dc9223c94ce98f4c64fc397d592ee56b24df11&v=4',
-              }}
-            />
-          </Frame>
+    <Container {...rest}>
+      <Header>
+        <Frame>
+          <Photo
+            source={{
+              uri:
+                'https://avatars2.githubusercontent.com/u/33178519?s=460&u=07dc9223c94ce98f4c64fc397d592ee56b24df11&v=4',
+            }}
+          />
+        </Frame>
 
-          <Name>Jacob Jones</Name>
-        </Header>
+        <Name>Jacob Jones</Name>
+      </Header>
 
-        <View>
-          <MenuItem>
-            <DrawerItem
-              label="Sorteio no faceook"
-              onPress={() => handleNavigate('SignIn')}
-            />
-            {isFocused === 'SignIn' && <Dash />}
-          </MenuItem>
-          <MenuItem>
-            <DrawerItem
-              label="Como funciona"
-              onPress={() => handleNavigate('SignUp')}
-            />
-            {isFocused === 'SignUp' && <Dash />}
-          </MenuItem>
-          <MenuItem>
-            <DrawerItem
-              label="Contate-nos"
-              onPress={() => handleNavigate('SignUp')}
-            />
-            {isFocused === 'SignUp' && <Dash />}
-          </MenuItem>
-          <MenuItem>
-            <DrawerItem
-              label="Compartilhar"
-              onPress={() => handleNavigate('SignUp')}
-            />
-            {isFocused === 'SignUp' && <Dash />}
-          </MenuItem>
-          <MenuItem>
-            <DrawerItem
-              label="Termos e Políticas"
-              onPress={() => handleNavigate('SignUp')}
-            />
-            {isFocused === 'SignUp' && <Dash />}
-          </MenuItem>
-          <MenuItem>
-            <DrawerItem
-              label="Sair"
-              onPress={() => handleNavigate('SignUp')}
-              isExit
-            />
-          </MenuItem>
-        </View>
-        <Socials>
-          <SocialNetwork type="facebook" />
-          <SocialNetwork type="instagram" />
-        </Socials>
-      </Container>
-    </DrawerContentScrollView>
+      <View>
+        <MenuItem>
+          <DrawerItem
+            label="Sorteio no faceook"
+            onPress={() => handleNavigate('SignIn')}
+          />
+          {isFocused === 'SignIn' && <Dash />}
+        </MenuItem>
+        <MenuItem>
+          <DrawerItem
+            label="Como funciona"
+            onPress={() => handleNavigate('SignUp')}
+          />
+          {isFocused === 'SignUp' && <Dash />}
+        </MenuItem>
+        <MenuItem>
+          <DrawerItem
+            label="Contate-nos"
+            onPress={() => handleNavigate('SignUp')}
+          />
+          {isFocused === 'SignUp' && <Dash />}
+        </MenuItem>
+        <MenuItem>
+          <DrawerItem
+            label="Compartilhar"
+            onPress={() => handleNavigate('SignUp')}
+          />
+          {isFocused === 'SignUp' && <Dash />}
+        </MenuItem>
+        <MenuItem>
+          <DrawerItem
+            label="Termos e Políticas"
+            onPress={() => handleNavigate('SignUp')}
+          />
+          {isFocused === 'SignUp' && <Dash />}
+        </MenuItem>
+        <MenuItem>
+          <DrawerItem
+            label="Sair"
+            onPress={() => handleNavigate('SignUp')}
+            isExit
+          />
+        </MenuItem>
+      </View>
+      <Socials>
+        <SocialNetwork type="facebook" />
+        <SocialNetwork type="instagram" />
+      </Socials>
+    </Container>
   );
 };
 

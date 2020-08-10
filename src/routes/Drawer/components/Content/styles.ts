@@ -1,17 +1,17 @@
 import styled, { css } from 'styled-components/native';
 import { DrawerItem as DrawerItemLib } from '@react-navigation/drawer';
 import Animated from 'react-native-reanimated';
+import { vh, vw } from 'react-native-expo-viewport-units';
+
 import { pxOrRem } from '../../../../functions';
 import { typography, colors } from '../../../../theme';
 import { IDrawerItem } from './interfaces';
 
 export const Container = styled.View`
   position: relative;
-  padding: ${pxOrRem(32)} ${pxOrRem(20)};
+  padding: ${pxOrRem(32)} ${pxOrRem(22)};
 
-  background: yellowgreen;
-
-  /* height: 100vh; */
+  height: ${vh(100)}px;
 `;
 
 export const DrawerItem = styled<IDrawerItem | any>(DrawerItemLib).attrs(

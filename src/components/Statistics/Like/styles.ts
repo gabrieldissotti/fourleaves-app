@@ -15,8 +15,5 @@ export const Text = styled(typography.PrimarySmall)`
 export const IconsMind = styled(IconsMindLib).attrs({
   color: colors.primarydark8,
 })`
-  height: 24;
-  width: 16;
-
   margin-right: ${pxOrRem(6)};
 `;

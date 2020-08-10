@@ -3,7 +3,7 @@ import { colors } from '../../../theme';
 import { pxOrRem, hexToRGBA } from '../../../functions';
 import { IconsMind as IconsMindLib } from '../../../icons';
 
-export const Container = styled.TouchableOpacity.attrs({
+export const Container = styled.View.attrs({
   shadowColor: '#000',
   shadowOffset: {
     width: 0,
@@ -11,7 +11,7 @@ export const Container = styled.TouchableOpacity.attrs({
   },
   shadowOpacity: 0.18,
   shadowRadius: 1.0,
-  elevation: 1,
+  elevation: 2,
 })`
   background: ${colors.primary};
   border-radius: ${pxOrRem(16)};

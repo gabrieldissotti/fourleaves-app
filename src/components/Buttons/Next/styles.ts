@@ -24,10 +24,7 @@ export const Container = styled.TouchableOpacity`
 
 export const IconsMind = styled(IconsMindLib).attrs({
   color: colors.primarydark8,
-})`
-  height: 24;
-  width: 16;
-`;
+})``;
 
 export const Text = styled(typography.PrimaryParagraph)`
   color: ${colors.primarydark8};

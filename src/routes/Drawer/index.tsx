@@ -27,7 +27,9 @@ const DrawerContainer: React.FC = () => {
         drawerContentOptions={{
           activeBackgroundColor: 'transparent',
         }}
-        sceneContainerStyle={{ backgroundColor: 'transparent' }}
+        sceneContainerStyle={{
+          backgroundColor: 'transparent',
+        }}
         drawerContent={props => {
           setProgress(props.progress);
 

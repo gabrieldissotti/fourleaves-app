@@ -1,6 +1,7 @@
 import React from 'react';
 import Animated from 'react-native-reanimated';
 import { createStackNavigator } from '@react-navigation/stack';
+import { useIsDrawerOpen } from '@react-navigation/drawer';
 import Header from '../../layouts/Header';
 import colors from '../../theme/colors';
 
@@ -12,6 +13,8 @@ import { Shadow } from './styles';
 const Stack = createStackNavigator();
 
 const Screens: React.FC<IProps> = ({ navigation, style }) => {
+  const isDrawerOpen = useIsDrawerOpen();
+
   return (
     <>
       <Shadow style={[{ flex: 1, overflow: 'hidden' }, style]} />
@@ -26,9 +29,12 @@ const Screens: React.FC<IProps> = ({ navigation, style }) => {
             },
             cardStyle: {
               backgroundColor: colors.white,
+              borderBottomLeftRadius: isDrawerOpen ? 24 : 0,
             },
             headerLeft: () => null,
-            headerTitle: (props: any) => <Header {...props} navigation={navigation} />, //eslint-disable-line
+            headerTitle: (props: any) => (
+              <Header {...props} navigation={navigation} />
+            ), //eslint-disable-line
           }}
         >
           <Stack.Screen name="SignIn" component={SignIn} />

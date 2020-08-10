@@ -29,10 +29,7 @@ export const Container = styled.TouchableOpacity<IContainer>`
 
 export const IconsMind = styled(IconsMindLib).attrs({
   color: colors.white,
-})`
-  height: 24;
-  width: 16;
-`;
+})``;
 
 export const Text = styled(typography.PrimaryParagraph)`
   color: ${colors.white};
