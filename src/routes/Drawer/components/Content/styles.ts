@@ -9,7 +9,8 @@ import { IDrawerItem } from './interfaces';
 
 export const Container = styled.View`
   position: relative;
-  padding: ${pxOrRem(32)} ${pxOrRem(22)};
+  padding: ${pxOrRem(32)} 0;
+  padding-left: ${pxOrRem(22)};
 
   height: ${vh(98)}px;
 `;
