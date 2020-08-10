@@ -10,10 +10,9 @@ export const Container = styled.View`
 
 export const Text = styled(typography.PrimarySmall)`
   color: ${colors.secondary};
+  margin-left: ${pxOrRem(6)};
 `;
 
 export const IconsMind = styled(IconsMindLib).attrs({
   color: colors.primarydark8,
-})`
-  margin-right: ${pxOrRem(6)};
-`;
+})``;
