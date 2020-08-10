@@ -11,7 +11,7 @@ export const Container = styled.View`
   position: relative;
   padding: ${pxOrRem(32)} ${pxOrRem(22)};
 
-  height: ${vh(100)}px;
+  height: ${vh(98)}px;
 `;
 
 export const DrawerItem = styled<IDrawerItem | any>(DrawerItemLib).attrs(

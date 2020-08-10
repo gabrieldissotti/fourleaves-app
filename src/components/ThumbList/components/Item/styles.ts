@@ -21,14 +21,10 @@ export const Wrap = styled.View`
   margin-left: ${pxOrRem(16)};
 `;
 
-export const Thumbnail = styled.Image.attrs({
-  height: 56,
-  width: 56,
-})`
-  ${Platform.OS === 'web' &&
-  css`
-    border-radius: ${pxOrRem(6)};
-  `}
+export const Thumbnail = styled.Image`
+  border-radius: ${pxOrRem(6)};
+  height: ${pxOrRem(56)};
+  width: ${pxOrRem(56)};
 `;
 
 export const Text = styled(typography.PrimaryParagraph)`

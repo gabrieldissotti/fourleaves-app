@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components/native';
 import Animated from 'react-native-reanimated';
 import { Platform } from 'react-native';
+import { colors } from '../../theme';
 
 export const Shadow = styled(Animated.View)`
   position: absolute;

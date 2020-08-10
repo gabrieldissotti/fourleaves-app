@@ -11,7 +11,7 @@ export const Container = styled.View.attrs({
   },
   shadowOpacity: 0.18,
   shadowRadius: 1.0,
-  elevation: 2,
+  elevation: 4,
 })`
   background: ${colors.primary};
   border-radius: ${pxOrRem(16)};
