@@ -18,6 +18,8 @@ import {
   Nunito_900Black_Italic,
 } from '@expo-google-fonts/nunito';
 
+import IconsMinds from '../../../assets/fonts/iconsmind/iconsminds.ttf';
+
 const Fonts: React.FC = ({ children }: any) => {
   useFonts({
     Nunito_200ExtraLight,
@@ -34,6 +36,7 @@ const Fonts: React.FC = ({ children }: any) => {
     Nunito_800ExtraBold_Italic,
     Nunito_900Black,
     Nunito_900Black_Italic,
+    IconsMinds,
   });
 
   return children;
