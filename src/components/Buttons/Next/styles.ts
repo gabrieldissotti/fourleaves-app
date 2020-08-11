@@ -1,7 +1,6 @@
 import styled from 'styled-components/native';
 import { colors, typography } from '../../../theme';
 import { pxOrRem } from '../../../functions';
-import { IconsMind as IconsMindLib } from '../../../icons';
 
 export const Container = styled.TouchableOpacity`
   flex-direction: row;
@@ -21,10 +20,6 @@ export const Container = styled.TouchableOpacity`
   bottom: ${pxOrRem(40)};
   right: 0;
 `;
-
-export const IconsMind = styled(IconsMindLib).attrs({
-  color: colors.primarydark8,
-})``;
 
 export const Text = styled(typography.PrimaryParagraph)`
   color: ${colors.primarydark8};

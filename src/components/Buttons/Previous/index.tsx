@@ -1,6 +1,8 @@
 import React from 'react';
 
-import { Container, Text, IconsMind } from './styles';
+import { Container, Text } from './styles';
+import { colors } from '../../../theme';
+import { IconsMinds } from '../../../icons';
 
 import { IProps } from './interfaces';
 
@@ -9,7 +11,7 @@ const Previous: React.FC<IProps> = ({ isOpen }) => {
     <Container isOpen={isOpen || false}>
       {isOpen && (
         <>
-          <IconsMind icon="left" />
+          <IconsMinds name="left" color={colors.white} size={24} />
           <Text>voltar</Text>
         </>
       )}

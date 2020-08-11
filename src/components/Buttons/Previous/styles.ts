@@ -1,7 +1,6 @@
 import styled, { css } from 'styled-components/native';
 import { colors, typography } from '../../../theme';
 import { pxOrRem } from '../../../functions';
-import { IconsMind as IconsMindLib } from '../../../icons';
 
 import { IContainer } from './interfaces';
 
@@ -26,10 +25,6 @@ export const Container = styled.TouchableOpacity<IContainer>`
       width: ${pxOrRem(112.5)};
     `}
 `;
-
-export const IconsMind = styled(IconsMindLib).attrs({
-  color: colors.white,
-})``;
 
 export const Text = styled(typography.PrimaryParagraph)`
   color: ${colors.white};

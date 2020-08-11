@@ -1,11 +1,13 @@
 import React from 'react';
 
-import { Container, IconsMind, Text } from './styles';
+import { Container, Text } from './styles';
+import { IconsMinds } from '../../../icons';
+import { colors } from '../../../theme';
 
 const Like: React.FC = () => {
   return (
     <Container>
-      <IconsMind icon="like" />
+      <IconsMinds name="like" color={colors.primarydark8} size={16} />
       <Text>28mi</Text>
     </Container>
   );

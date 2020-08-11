@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
 import { colors } from '../../../theme';
 import { pxOrRem, hexToRGBA } from '../../../functions';
-import { IconsMind as IconsMindLib } from '../../../icons';
+import { CustomIcons as CustomIconsLib } from '../../../icons';
 
 export const Container = styled.View.attrs({
   shadowColor: '#000',
@@ -26,6 +26,6 @@ export const Container = styled.View.attrs({
   box-shadow: 0px 3px 8px ${hexToRGBA(colors.primarydark8, 0.16)};
 `;
 
-export const IconsMind = styled(IconsMindLib).attrs({
+export const CustomIcons = styled(CustomIconsLib).attrs({
   color: colors.primarydark7,
 })``;
