@@ -11,7 +11,7 @@ export const Shadow = styled(Animated.View)`
   width: 24px;
   height: 90%;
 
-  background: rgba(56, 42, 10, 0.14);
+  background-color: rgba(56, 42, 10, 0.14);
   ${Platform.OS === 'web' &&
   css`
     filter: blur(4px);

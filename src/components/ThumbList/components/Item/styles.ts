@@ -10,7 +10,7 @@ export const Container = styled.TouchableOpacity`
   padding: ${pixels(17)} 0;
 
   border-bottom-width: ${pixels(1)};
-  border-bottom-color: ${colors.graylight8};
+  border-bottom-color: ${colors.blackLight6};
 
   flex-direction: row;
   align-items: center;
