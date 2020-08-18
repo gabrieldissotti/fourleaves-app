@@ -1,19 +1,19 @@
 import styled, { css } from 'styled-components/native';
 import { colors, typography } from '../../../theme';
-import { pxOrRem } from '../../../functions';
+import { pixels } from '../../../functions';
 
 import { IContainer } from './interfaces';
 
 export const Container = styled.TouchableOpacity<IContainer>`
-  background: ${colors.secondary};
-  height: ${pxOrRem(62)};
-  border-top-right-radius: ${pxOrRem(16)};
-  border-bottom-right-radius: ${pxOrRem(16)};
+  background: ${colors.blackDark1};
+  height: ${pixels(62)};
+  border-top-right-radius: ${pixels(16)};
+  border-bottom-right-radius: ${pixels(16)};
 
   position: absolute;
-  bottom: ${pxOrRem(40)};
+  bottom: ${pixels(40)};
   left: 0;
-  width: ${pxOrRem(24)};
+  width: ${pixels(24)};
 
   ${props =>
     props.isOpen &&
@@ -21,11 +21,11 @@ export const Container = styled.TouchableOpacity<IContainer>`
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
-      padding: 0 ${pxOrRem(16)};
-      width: ${pxOrRem(112.5)};
+      padding: 0 ${pixels(16)};
+      width: ${pixels(112.5)};
     `}
 `;
 
 export const Text = styled(typography.PrimaryParagraph)`
-  color: ${colors.white};
+  color: ${colors.whiteDefault};
 `;

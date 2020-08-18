@@ -11,7 +11,7 @@ const Previous: React.FC<IProps> = ({ isOpen }) => {
     <Container isOpen={isOpen || false}>
       {isOpen && (
         <>
-          <IconsMinds name="left" color={colors.white} size={24} />
+          <IconsMinds name="left" color={colors.whiteDefault} size={24} />
           <Text>voltar</Text>
         </>
       )}

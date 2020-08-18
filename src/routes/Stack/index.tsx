@@ -2,7 +2,7 @@ import React from 'react';
 import Animated from 'react-native-reanimated';
 import { createStackNavigator } from '@react-navigation/stack';
 import { useIsDrawerOpen } from '@react-navigation/drawer';
-import Header from '../../layouts/Header';
+import Header from './components/Header';
 import colors from '../../theme/colors';
 
 import { SignIn, SignUp } from '../../pages';
@@ -22,13 +22,13 @@ const Screens: React.FC<IProps> = ({ navigation, style }) => {
         <Stack.Navigator
           screenOptions={{
             headerStyle: {
-              backgroundColor: colors.primarylight2,
+              backgroundColor: colors.primaryLight2,
               borderBottomLeftRadius: 30,
               borderBottomRightRadius: 30,
               height: 139,
             },
             cardStyle: {
-              backgroundColor: colors.white,
+              backgroundColor: colors.whiteDefault,
               borderBottomLeftRadius: isDrawerOpen ? 24 : 0,
             },
             headerLeft: () => null,

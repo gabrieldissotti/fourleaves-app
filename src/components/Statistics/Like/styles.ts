@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components/native';
 import { colors, typography } from '../../../theme';
-import { pxOrRem } from '../../../functions';
+import { pixels } from '../../../functions';
 import { isWebVersion } from '../../../constants';
 
 export const Container = styled.View`
@@ -12,7 +12,7 @@ export const Container = styled.View`
   `}
 `;
 
-export const Text = styled(typography.PrimarySmall)`
-  color: ${colors.secondary};
-  margin-left: ${pxOrRem(6)};
+export const Text = styled(typography.primarySmall)`
+  color: ${colors.blackDefault};
+  margin-left: ${pixels(6)};
 `;

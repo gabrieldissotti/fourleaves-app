@@ -15,7 +15,7 @@ const Bar = styled.View<BarInterface>`
   height: 2px;
   width: 11px;
 
-  background: ${colors.primarydark7};
+  background: ${colors.blackDefault};
   border-radius: 1px;
 `;
 

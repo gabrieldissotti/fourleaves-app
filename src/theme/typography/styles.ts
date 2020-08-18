@@ -1,42 +1,109 @@
 import styled from 'styled-components/native';
-import { pxOrRem } from '../../functions';
-
-export const PrimaryHeading3Bold = styled.Text`
-  font-family: 'Nunito_700Bold';
-  font-size: ${pxOrRem(24)};
-  line-height: ${pxOrRem(36)};
-  letter-spacing: 0;
-  color: red;
-`;
-
-export const PrimaryParagraphBold = styled.Text`
-  font-family: 'Nunito_700Bold';
-  font-size: ${pxOrRem(16)};
-  line-height: ${pxOrRem(24)};
-  letter-spacing: 0;
-  color: red;
-`;
+import { pixels } from '../../functions';
 
 export const PrimaryParagraph = styled.Text`
   font-family: 'Nunito_400Regular';
-  font-size: ${pxOrRem(16)};
-  line-height: ${pxOrRem(24)};
+  font-size: ${pixels(16)};
+  line-height: ${pixels(24)};
   letter-spacing: 0;
   color: red;
 `;
 
-export const PrimaryParagraphSemiBold = styled.Text`
-  font-family: 'Nunito_600SemiBold';
-  font-size: ${pxOrRem(16)};
-  line-height: ${pxOrRem(24)};
-  letter-spacing: 0;
-  color: red;
+export const secondaryHeading1 = styled.Text`
+  font-size: ${pixels(40)};
+  line-height: ${pixels(60)};
+  font-family: 'Open Sans';
+  font-weight: normal;
+`;
+export const secondarySubtitle1 = styled.Text`
+  font-size: ${pixels(36)};
+  line-height: ${pixels(54)};
+  font-family: 'Open Sans';
+  font-weight: normal;
+`;
+export const secondaryHeading2 = styled.Text`
+  font-size: ${pixels(32)};
+  line-height: ${pixels(48)};
+  font-family: 'Open Sans';
+  font-weight: normal;
+`;
+export const secondarySubtitle2 = styled.Text`
+  font-size: ${pixels(28)};
+  line-height: ${pixels(42)};
+  font-family: 'Open Sans';
+  font-weight: normal;
+`;
+export const secondaryHeading3 = styled.Text`
+  font-size: ${pixels(24)};
+  line-height: ${pixels(36)};
+  font-family: 'Open Sans';
+  font-weight: normal;
+`;
+export const secondarySubtitle3 = styled.Text`
+  font-size: ${pixels(20)};
+  line-height: ${pixels(30)};
+  font-family: 'Open Sans';
+  font-weight: normal;
+`;
+export const secondaryParagraph = styled.Text`
+  font-size: ${pixels(16)};
+  line-height: ${pixels(24)};
+  font-family: 'Open Sans';
+  font-weight: normal;
+`;
+export const secondarySmall = styled.Text`
+  font-size: ${pixels(14)};
+  line-height: ${pixels(21)};
+  font-family: 'Open Sans';
+  font-weight: normal;
 `;
 
-export const PrimarySmall = styled.Text`
+export const primaryHeading1 = styled.Text`
+  font-size: ${pixels(40)};
+  line-height: ${pixels(60)};
   font-family: 'Nunito_400Regular';
-  font-size: ${pxOrRem(14)};
-  line-height: ${pxOrRem(21)};
-  letter-spacing: 0;
-  color: red;
+  font-weight: normal;
+`;
+export const primarySubtitle1 = styled.Text`
+  font-size: ${pixels(36)};
+  line-height: ${pixels(54)};
+  font-family: 'Nunito_400Regular';
+  font-weight: normal;
+`;
+export const primaryHeading2 = styled.Text`
+  font-size: ${pixels(32)};
+  line-height: ${pixels(48)};
+  font-family: 'Nunito_400Regular';
+  font-weight: normal;
+`;
+export const primarySubtitle2 = styled.Text`
+  font-size: ${pixels(28)};
+  line-height: ${pixels(42)};
+  font-family: 'Nunito_400Regular';
+  font-weight: normal;
+`;
+export const primaryHeading3 = styled.Text`
+  font-size: ${pixels(24)};
+  line-height: ${pixels(36)};
+  font-family: 'Nunito_400Regular';
+  font-weight: normal;
+`;
+
+export const primarySubtitle3 = styled.Text`
+  font-size: ${pixels(20)};
+  line-height: ${pixels(30)};
+  font-family: 'Nunito_400Regular';
+  font-weight: normal;
+`;
+export const primaryParagraph = styled.Text`
+  font-size: ${pixels(16)};
+  line-height: ${pixels(24)};
+  font-family: 'Nunito_400Regular';
+  font-weight: normal;
+`;
+export const primarySmall = styled.Text`
+  font-size: ${pixels(14)};
+  line-height: ${pixels(21)};
+  font-family: 'Nunito_400Regular';
+  font-weight: normal;
 `;

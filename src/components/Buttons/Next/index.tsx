@@ -10,7 +10,7 @@ const Next: React.FC<IProps> = ({ text }) => {
   return (
     <Container>
       <Text>{text}</Text>
-      <IconsMinds name="right" color={colors.primarydark8} size={24} />
+      <IconsMinds name="right" color={colors.primaryDefaultdark8} size={24} />
     </Container>
   );
 };

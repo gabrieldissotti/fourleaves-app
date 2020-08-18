@@ -1,15 +1,15 @@
 import styled, { css } from 'styled-components/native';
 
 import { Platform } from 'react-native';
-import { pxOrRem } from '../../../../functions';
+import { pixels } from '../../../../functions';
 import { colors, typography } from '../../../../theme';
 
 export const Container = styled.TouchableOpacity`
   width: 100%;
-  height: ${pxOrRem(90)};
-  padding: ${pxOrRem(17)} 0;
+  height: ${pixels(90)};
+  padding: ${pixels(17)} 0;
 
-  border-bottom-width: ${pxOrRem(1)};
+  border-bottom-width: ${pixels(1)};
   border-bottom-color: ${colors.graylight8};
 
   flex-direction: row;
@@ -18,15 +18,15 @@ export const Container = styled.TouchableOpacity`
 
 export const Wrap = styled.View`
   flex-direction: column;
-  margin-left: ${pxOrRem(16)};
+  margin-left: ${pixels(16)};
 `;
 
 export const Thumbnail = styled.Image`
-  border-radius: ${pxOrRem(6)};
-  height: ${pxOrRem(56)};
-  width: ${pxOrRem(56)};
+  border-radius: ${pixels(6)};
+  height: ${pixels(56)};
+  width: ${pixels(56)};
 `;
 
 export const Text = styled(typography.PrimaryParagraph)`
-  color: ${colors.secondary};
+  color: ${colors.blackDefault};
 `;
