@@ -5,7 +5,7 @@ import { useIsDrawerOpen } from '@react-navigation/drawer';
 import Header from './components/Header';
 import colors from '../../theme/colors';
 
-import { SignIn, SignUp } from '../../pages';
+import { SignIn, Pages } from '../../pages';
 import { IProps } from './interfaces';
 
 import { Shadow } from './styles';
@@ -38,7 +38,7 @@ const Screens: React.FC<IProps> = ({ navigation, style }) => {
           }}
         >
           <Stack.Screen name="SignIn" component={SignIn} />
-          <Stack.Screen name="SignUp" component={SignUp} />
+          <Stack.Screen name="Pages" component={Pages} />
         </Stack.Navigator>
       </Animated.View>
     </>
