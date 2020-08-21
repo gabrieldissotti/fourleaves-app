@@ -13,6 +13,6 @@ export const Container = styled.View`
 `;
 
 export const Text = styled(typography.primarySmall)`
-  color: ${colors.blackDefault};
+  color: ${colors.blackLight4};
   margin-left: ${pixels(6)};
 `;

@@ -1,16 +1,15 @@
-import styled, { css } from 'styled-components/native';
+import styled from 'styled-components/native';
 
-import { Platform } from 'react-native';
 import { pixels } from '../../../../functions';
 import { colors, typography } from '../../../../theme';
 
 export const Container = styled.TouchableOpacity`
   width: 100%;
   height: ${pixels(90)};
-  padding: ${pixels(17)} 0;
+  padding: ${pixels(17)} ${pixels(8)};
 
   border-bottom-width: ${pixels(1)};
-  border-bottom-color: ${colors.blackLight6};
+  border-bottom-color: ${colors.primaryLight7};
 
   flex-direction: row;
   align-items: center;

@@ -24,7 +24,6 @@ export const DrawerItem = styled<IDrawerItem | any>(DrawerItemLib).attrs(
       fontFamily: 'Nunito_600SemiBold',
       fontSize: 16,
       letterSpacing: 0,
-      lineHeight: 24,
     },
     style: {
       padding: 0,
@@ -32,7 +31,10 @@ export const DrawerItem = styled<IDrawerItem | any>(DrawerItemLib).attrs(
       opacity: props.isExit ? 0.5 : 1,
     },
   }),
-)``;
+)`
+  margin: 0;
+  padding: 0;
+`;
 
 export const Header = styled.View`
   display: flex;
@@ -52,7 +54,7 @@ export const Name = styled(typography.primaryParagraph)`
 export const Frame = styled.View`
   background: transparent;
   border-radius: ${pixels(31.5)};
-  border: rgba(255, 255, 255, 0.5) ${pixels(1.5)} solid;
+  border: rgba(255, 255, 255, 0.4) ${pixels(2)} solid;
   padding: ${pixels(1)};
   height: ${pixels(63)};
   width: ${pixels(63)};
@@ -66,18 +68,21 @@ export const Photo = styled.Image`
   border-radius: ${pixels(31.5)};
 `;
 
-export const MenuItem = styled.View``;
+export const MenuItem = styled.View`
+  margin: 0;
+  padding: 0;
+`;
 
 export const Dash = styled(Animated.View)`
-  width: ${pixels(18)};
+  width: ${pixels(22)};
   height: ${pixels(3)};
 
   background: rgba(255, 255, 255, 0.9);
   border-radius: ${pixels(1.5)};
 
   position: absolute;
-  left: ${pixels(16)};
-  bottom: ${pixels(14)};
+  left: ${pixels(8)};
+  bottom: ${pixels(8)};
 `;
 
 export const Socials = styled.View`

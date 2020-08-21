@@ -20,7 +20,7 @@ const DrawerContainer: React.FC = () => {
   return (
     <Container style={{ flex: 1 }}>
       <Drawer.Navigator
-        initialRouteName="SignIn"
+        initialRouteName="Pages"
         drawerType="slide"
         overlayColor="transparent"
         drawerStyle={{ width: '70%', backgroundColor: 'transparent' }}
