@@ -41,7 +41,7 @@ export const Header = styled.View`
   margin-bottom: ${pixels(16)};
 `;
 
-export const Name = styled(typography.PrimaryParagraph)`
+export const Name = styled(typography.primaryParagraph)`
   margin-left: ${pixels(8)};
 
   font-family: 'Nunito_700Bold';

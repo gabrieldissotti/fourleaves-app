@@ -27,6 +27,6 @@ export const Thumbnail = styled.Image`
   width: ${pixels(56)};
 `;
 
-export const Text = styled(typography.PrimaryParagraph)`
+export const Text = styled(typography.primaryParagraph)`
   color: ${colors.blackDefault};
 `;

@@ -26,6 +26,6 @@ export const Container = styled.TouchableOpacity<IContainer>`
     `}
 `;
 
-export const Text = styled(typography.PrimaryParagraph)`
+export const Text = styled(typography.primaryParagraph)`
   color: ${colors.whiteDefault};
 `;

@@ -1,13 +1,6 @@
 import styled from 'styled-components/native';
 import { pixels } from '../../functions';
-
-export const PrimaryParagraph = styled.Text`
-  font-family: 'Nunito_400Regular';
-  font-size: ${pixels(16)};
-  line-height: ${pixels(24)};
-  letter-spacing: 0;
-  color: red;
-`;
+import colors from '../colors';
 
 export const secondaryHeading1 = styled.Text`
   font-size: ${pixels(40)};
@@ -101,6 +94,17 @@ export const primaryParagraph = styled.Text`
   font-family: 'Nunito_400Regular';
   font-weight: normal;
 `;
+
+export const primaryParagraphLink = styled.Text`
+  font-size: ${pixels(16)};
+  line-height: ${pixels(24)};
+  color: ${colors.primaryDefault};
+  text-decoration: underline;
+  text-decoration-color: ${colors.primaryDefault};
+  font-family: 'Nunito_700Bold';
+  font-weight: normal;
+`;
+
 export const primarySmall = styled.Text`
   font-size: ${pixels(14)};
   line-height: ${pixels(21)};
