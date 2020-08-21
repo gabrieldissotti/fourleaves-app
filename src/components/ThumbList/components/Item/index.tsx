@@ -6,9 +6,9 @@ import { Wrapper, Like } from '../../../Statistics';
 
 import { IProps } from './interfaces';
 
-const Item: React.FC<IProps> = ({ thumbnail, text, statistics }) => {
+const Item: React.FC<IProps> = ({ thumbnail, text, statistics, index }) => {
   return (
-    <Container>
+    <Container isFirst={index === 0}>
       <Thumbnail source={DefaultThumbnail} />
       <Wrap>
         <Text>{text}</Text>

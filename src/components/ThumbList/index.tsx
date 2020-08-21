@@ -1,16 +1,17 @@
 import React, { useCallback } from 'react';
-import { FlatList } from './styles';
+import { FlatList, SafeAreaView } from './styles';
 
 import { Item } from './components';
 import { IProps } from './interfaces';
 
 const ThumbList: React.FC<IProps> = ({ data }) => {
   const renderItem = useCallback(
-    ({ item }) => (
+    ({ item, index }) => (
       <Item
         thumbnail={item.thumbnail}
         text={item.text}
         statistics={item.statistics}
+        index={index}
       />
     ),
     [],
@@ -19,7 +20,16 @@ const ThumbList: React.FC<IProps> = ({ data }) => {
   const keyExtractor = useCallback(item => item.id, []);
 
   return (
-    <FlatList data={data} renderItem={renderItem} keyExtractor={keyExtractor} />
+    <SafeAreaView>
+      <FlatList
+        data={data}
+        renderItem={renderItem}
+        keyExtractor={keyExtractor}
+        contentContainerStyle={{
+          flexGrow: 1,
+        }}
+      />
+    </SafeAreaView>
   );
 };
 

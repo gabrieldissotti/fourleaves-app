@@ -1,12 +1,23 @@
-import styled from 'styled-components/native';
-import { FlatList as FlatListLib } from 'react-native';
+import styled, { css } from 'styled-components/native';
+import { vh } from 'react-native-expo-viewport-units';
+import {
+  Platform,
+  FlatList as FlatListLib,
+  SafeAreaView as SafeAreaViewLib,
+} from 'react-native';
 
 import { pixels } from '../../functions';
-import { colors } from '../../theme';
 
-export const FlatList = styled(FlatListLib)`
-  margin: ${pixels(32)} ${pixels(32)} 0 ${pixels(32)};
+export const SafeAreaView = styled(SafeAreaViewLib)``;
 
-  border-top-width: ${pixels(1)};
-  border-top-color: ${colors.primaryLight7};
+export const FlatList = styled(FlatListLib).attrs({
+  contentContainerStyle: { paddingBottom: Platform.OS === 'web' ? 112 : 140 },
+})`
+  ${Platform.OS === 'web' &&
+  css`
+    flex: 1;
+    min-height: ${pixels(Number(vh(100)) - 138)};
+  `};
+
+  padding: ${pixels(32)} ${pixels(32)} 0 ${pixels(32)};
 `;
