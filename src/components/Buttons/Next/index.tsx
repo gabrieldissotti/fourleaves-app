@@ -6,11 +6,13 @@ import { colors } from '../../../theme';
 
 import { IProps } from './interfaces';
 
-const Next: React.FC<IProps> = ({ text }) => {
+const Next: React.FC<IProps> = ({ text, navigation, to }) => {
+  const handleNavigation = () => navigation.navigate(to);
+
   return (
-    <Container>
+    <Container onPress={handleNavigation}>
       <Text>{text}</Text>
-      <IconsMinds name="right" color={colors.primaryDefaultdark8} size={24} />
+      <IconsMinds name="right" color={colors.blackDefault} size={24} />
     </Container>
   );
 };

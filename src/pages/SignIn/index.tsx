@@ -24,7 +24,7 @@ const SignIn: React.FC<IProps> = ({ navigation }) => {
 
       <Previous />
 
-      <Next text="Entrar com o facebook" />
+      <Next text="Entrar com o facebook" navigation={navigation} to="Pages" />
     </Container>
   );
 };
