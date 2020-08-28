@@ -3,16 +3,7 @@ import { colors } from '../../../theme';
 import { pixels } from '../../../functions';
 import { CustomIcons as CustomIconsLib } from '../../../icons';
 
-export const Container = styled.View.attrs({
-  shadowColor: '#000',
-  shadowOffset: {
-    width: 0,
-    height: 1,
-  },
-  shadowOpacity: 0.18,
-  shadowRadius: 1.0,
-  elevation: 4,
-})`
+export const Container = styled.View`
   background: ${colors.primaryDefault};
   border-radius: ${pixels(16)};
 
@@ -22,8 +13,6 @@ export const Container = styled.View.attrs({
 
   align-items: center;
   justify-content: center;
-
-  box-shadow: 0px 3px 8px ${colors.blackDefaultAlpha14};
 `;
 
 export const CustomIcons = styled(CustomIconsLib).attrs({

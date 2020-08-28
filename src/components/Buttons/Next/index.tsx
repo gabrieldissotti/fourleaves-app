@@ -2,7 +2,7 @@ import React, { memo, useCallback } from 'react';
 import { IconsMinds, SimpleLineIcon } from '../../../icons';
 
 import { Container, Text } from './styles';
-import { colors } from '../../../theme';
+import { colors, shadows } from '../../../theme';
 import { Step } from './components';
 
 import { IProps } from './interfaces';
@@ -51,7 +51,7 @@ const Next: React.FC<IProps> = ({ text, navigation, to, mode, step }) => {
   ));
 
   return (
-    <Container onPress={handleNavigation} mode={mode}>
+    <Container onPress={handleNavigation} mode={mode} style={shadows.Default}>
       {mode === 'wizard' ? <Wizard /> : <Default />}
     </Container>
   );
