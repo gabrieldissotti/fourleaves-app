@@ -77,7 +77,7 @@ const Content: React.FC<any> = ({ navigation, ...rest }) => {
         <MenuItem>
           <DrawerItem
             label="Sair"
-            onPress={() => handleNavigate('SignUp')}
+            onPress={() => handleNavigate('SignIn')}
             isExit
           />
         </MenuItem>
