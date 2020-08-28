@@ -6,4 +6,5 @@ export interface IItem extends IItemProps {
 
 export interface IProps {
   data: IItem[];
+  navigation?: any;
 }

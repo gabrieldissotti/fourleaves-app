@@ -1,7 +1,7 @@
 export type IMode = 'default' | 'newRaffle' | 'share' | 'wizard';
 
 export interface IProps {
-  navigation: any;
+  navigation?: any;
   mode?: IMode;
   text?: string;
   to?: string;

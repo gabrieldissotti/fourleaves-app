@@ -10,8 +10,8 @@ import { IProps } from './interfaces';
 const SignUp: React.FC<IProps> = ({ navigation }) => {
   return (
     <Container>
-      <ThumbList data={mock} />
-      <Previous isOpen />
+      <ThumbList data={mock} navigation={navigation} />
+      <Previous />
       <Next mode="wizard" step={1} />
     </Container>
   );
