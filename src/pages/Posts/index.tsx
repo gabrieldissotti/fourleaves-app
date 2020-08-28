@@ -9,7 +9,7 @@ const Posts: React.FC<IProps> = ({ navigation }) => {
   return (
     <Container>
       <Previous isOpen navigation={navigation} to="Pages" />
-      <Next mode="wizard" step={3} />
+      <Next mode="wizard" step={2} />
     </Container>
   );
 };
