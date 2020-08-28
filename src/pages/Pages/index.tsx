@@ -12,7 +12,7 @@ const SignUp: React.FC<IProps> = ({ navigation }) => {
     <Container>
       <ThumbList data={mock} />
       <Previous isOpen />
-      <Next text="step1" navigation={navigation} to="Pages" />
+      <Next mode="wizard" step={1} />
     </Container>
   );
 };

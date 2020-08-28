@@ -19,6 +19,7 @@ import {
 } from '@expo-google-fonts/nunito';
 
 import IconsMinds from '../../../assets/fonts/iconsmind/iconsminds.ttf';
+import SimpleLineIcon from '../../../assets/fonts/simplelineicon/simplelineicon.ttf';
 
 const Fonts: React.FC = ({ children }: any) => {
   useFonts({
@@ -37,6 +38,7 @@ const Fonts: React.FC = ({ children }: any) => {
     // Nunito_900Black,
     // Nunito_900Black_Italic,
     IconsMinds,
+    SimpleLineIcon,
   });
 
   return children;

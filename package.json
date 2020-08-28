@@ -64,7 +64,8 @@
   "rnpm": {
     "assets": [
       "assets/fonts",
-      "assets/fonts/iconsmind"
+      "assets/fonts/iconsmind",
+      "assets/fonts/simplelineicon"
     ]
   }
 }

@@ -3,5 +3,10 @@ module.exports = {
     ios: {},
     android: {},
   },
-  assets: ['./assets', './assets/fonts', './assets/fonts/iconsmind'],
+  assets: [
+    './assets',
+    './assets/fonts',
+    './assets/fonts/iconsmind',
+    './assets/fonts/simplelineicon',
+  ],
 };

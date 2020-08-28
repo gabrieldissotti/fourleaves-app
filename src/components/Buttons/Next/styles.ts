@@ -1,8 +1,9 @@
-import styled from 'styled-components/native';
+import styled, { css } from 'styled-components/native';
 import { colors, typography } from '../../../theme';
 import { pixels } from '../../../functions';
+import { IContainer } from './interfaces';
 
-export const Container = styled.TouchableOpacity`
+export const Container = styled.TouchableOpacity<IContainer>`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
@@ -19,6 +20,17 @@ export const Container = styled.TouchableOpacity`
   position: absolute;
   bottom: ${pixels(40)};
   right: 0;
+
+  ${props =>
+    props.mode === 'wizard' &&
+    css`
+      padding-left: ${pixels(24)};
+      padding-right: 0;
+
+      justify-content: flex-start;
+
+      background: ${colors.whiteDefault};
+    `}
 `;
 
 export const Text = styled(typography.primaryParagraph)`

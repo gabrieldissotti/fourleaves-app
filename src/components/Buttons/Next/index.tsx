@@ -1,18 +1,58 @@
-import React from 'react';
-import { IconsMinds } from '../../../icons';
+import React, { memo, useCallback } from 'react';
+import { IconsMinds, SimpleLineIcon } from '../../../icons';
 
 import { Container, Text } from './styles';
 import { colors } from '../../../theme';
+import { Step } from './components';
 
 import { IProps } from './interfaces';
+import { IStatus } from './components/Step/interfaces';
 
-const Next: React.FC<IProps> = ({ text, navigation, to }) => {
-  const handleNavigation = () => navigation.navigate(to);
+const Next: React.FC<IProps> = ({ text, navigation, to, mode, step }) => {
+  const handleNavigation = () => navigation?.navigate(to);
 
-  return (
-    <Container onPress={handleNavigation}>
+  const getStatusByElementStaticStep = useCallback(
+    (elementStep: number): IStatus => {
+      const actualStep = step || 1;
+
+      if (actualStep && actualStep < elementStep) {
+        return 'disabled';
+      }
+      if (actualStep && actualStep > elementStep) {
+        return 'visualized';
+      }
+
+      return 'active';
+    },
+    [step],
+  );
+
+  const Wizard = memo(() => (
+    <>
+      <Step status={getStatusByElementStaticStep(1)}>
+        <SimpleLineIcon name="flag" color={colors.blackDefault} size={14} />
+      </Step>
+
+      <Step status={getStatusByElementStaticStep(2)}>
+        <IconsMinds name="newspaper" color={colors.blackDefault} size={14} />
+      </Step>
+
+      <Step status={getStatusByElementStaticStep(3)} fullRightTrace>
+        <IconsMinds name="check" color={colors.blackDefault} size={14} />
+      </Step>
+    </>
+  ));
+
+  const Default = memo(() => (
+    <>
       <Text>{text}</Text>
       <IconsMinds name="right" color={colors.blackDefault} size={24} />
+    </>
+  ));
+
+  return (
+    <Container onPress={handleNavigation} mode={mode}>
+      {mode === 'wizard' ? <Wizard /> : <Default />}
     </Container>
   );
 };
