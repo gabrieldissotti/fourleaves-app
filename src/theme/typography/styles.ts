@@ -5,49 +5,49 @@ import colors from '../colors';
 export const secondaryHeading1 = styled.Text`
   font-size: ${pixels(40)};
   line-height: ${pixels(60)};
-  font-family: 'Open Sans';
+  font-family: 'OpenSans_400Regular';
   font-weight: normal;
 `;
 export const secondarySubtitle1 = styled.Text`
   font-size: ${pixels(36)};
   line-height: ${pixels(54)};
-  font-family: 'Open Sans';
+  font-family: 'OpenSans_400Regular';
   font-weight: normal;
 `;
 export const secondaryHeading2 = styled.Text`
   font-size: ${pixels(32)};
   line-height: ${pixels(48)};
-  font-family: 'Open Sans';
+  font-family: 'OpenSans_400Regular';
   font-weight: normal;
 `;
 export const secondarySubtitle2 = styled.Text`
   font-size: ${pixels(28)};
   line-height: ${pixels(42)};
-  font-family: 'Open Sans';
+  font-family: 'OpenSans_400Regular';
   font-weight: normal;
 `;
 export const secondaryHeading3 = styled.Text`
   font-size: ${pixels(24)};
   line-height: ${pixels(36)};
-  font-family: 'Open Sans';
+  font-family: 'OpenSans_400Regular';
   font-weight: normal;
 `;
 export const secondarySubtitle3 = styled.Text`
   font-size: ${pixels(20)};
   line-height: ${pixels(30)};
-  font-family: 'Open Sans';
+  font-family: 'OpenSans_400Regular';
   font-weight: normal;
 `;
 export const secondaryParagraph = styled.Text`
   font-size: ${pixels(16)};
   line-height: ${pixels(24)};
-  font-family: 'Open Sans';
+  font-family: 'OpenSans_400Regular';
   font-weight: normal;
 `;
 export const secondarySmall = styled.Text`
   font-size: ${pixels(14)};
   line-height: ${pixels(21)};
-  font-family: 'Open Sans';
+  font-family: 'OpenSans_400Regular';
   font-weight: normal;
 `;
 

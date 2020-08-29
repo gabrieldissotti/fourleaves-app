@@ -7,7 +7,7 @@ import { IContainer } from './interfaces';
 
 export const Container = styled.TouchableOpacity<IContainer>`
   width: 100%;
-  height: ${pixels(317)};
+  height: ${pixels(324)};
   padding: ${pixels(16)};
 
   border-radius: ${pixels(8)};
