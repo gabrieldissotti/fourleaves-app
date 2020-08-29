@@ -7,7 +7,7 @@ import { colors } from '../../../theme';
 const Shares: React.FC = () => {
   return (
     <Container>
-      <SimpleLineIcon name="share" color={colors.blackLight4} size={16} />
+      <SimpleLineIcon name="share" color={colors.blackLight4} size={13} />
       <Text>12k</Text>
     </Container>
   );
