@@ -19,5 +19,5 @@ export const FlatList = styled(FlatListLib).attrs({
     min-height: ${pixels(Number(vh(100)) - 138)};
   `};
 
-  padding: ${pixels(16)} ${pixels(16)} 0 ${pixels(16)};
+  padding: ${pixels(32)} ${pixels(16)} 0 ${pixels(16)};
 `;
