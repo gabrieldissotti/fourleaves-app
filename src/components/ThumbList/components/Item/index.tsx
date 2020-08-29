@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Container, Thumbnail, Text, Wrap } from './styles';
 import DefaultThumbnail from '../../../../../assets/example-page.png';
-import { Wrapper, Like } from '../../../Statistics';
+import { Wrapper, Likes } from '../../../Statistics';
 
 import { IProps } from './interfaces';
 
@@ -19,7 +19,7 @@ const Item: React.FC<IProps> = ({
       <Wrap>
         <Text>{text}</Text>
         <Wrapper>
-          <Like />
+          <Likes />
         </Wrapper>
       </Wrap>
     </Container>

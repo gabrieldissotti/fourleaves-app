@@ -4,7 +4,7 @@ import { Container, Text } from './styles';
 import { IconsMinds } from '../../../icons';
 import { colors } from '../../../theme';
 
-const Like: React.FC = () => {
+const Likes: React.FC = () => {
   return (
     <Container>
       <IconsMinds name="like" color={colors.blackLight4} size={16} />
@@ -13,4 +13,4 @@ const Like: React.FC = () => {
   );
 };
 
-export default Like;
+export default Likes;

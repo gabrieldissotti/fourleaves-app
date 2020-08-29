@@ -10,7 +10,7 @@ import {
   SeeMore,
 } from './styles';
 import DefaultThumbnail from '../../../../../assets/example-post.png';
-import { Wrapper, Like, Comments, Shares } from '../../../Statistics';
+import { Wrapper, Likes, Comments, Shares } from '../../../Statistics';
 import { shadows } from '../../../../theme';
 
 import { IProps } from './interfaces';
@@ -41,7 +41,7 @@ const Item: React.FC<IProps> = ({
       </Wrap>
       <Thumbnail source={DefaultThumbnail} />
       <Wrapper>
-        <Like />
+        <Likes />
         <Comments />
         <Shares />
       </Wrapper>
