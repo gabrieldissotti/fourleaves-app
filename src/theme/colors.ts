@@ -12,6 +12,7 @@ export default {
   blackDefault: 'rgba(56, 42, 10, 1)',
   blackDefaultAlpha14: 'rgba(56, 42, 10, 0.14)',
   blackDark1: 'rgba(31, 22, 2, 1)',
+  blackDark1Alpha12: 'rgba(31, 22, 2, 0.12)',
   blackLight1: 'rgba(82, 64, 23, 1)',
   blackLight2: 'rgba(107, 87, 41, 1)',
   blackLight3: 'rgba(133, 112, 64, 1)',

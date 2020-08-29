@@ -29,9 +29,6 @@ const PostList: React.FC<IProps> = ({ data, navigation }) => {
         data={data}
         renderItem={renderItem}
         keyExtractor={keyExtractor}
-        contentContainerStyle={{
-          flexGrow: 1,
-        }}
       />
     </SafeAreaView>
   );

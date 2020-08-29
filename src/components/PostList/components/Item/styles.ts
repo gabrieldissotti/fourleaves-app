@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components/native';
 
+import { Platform } from 'react-native';
 import { pixels } from '../../../../functions';
 import { colors, typography } from '../../../../theme';
 import { IContainer } from './interfaces';
@@ -12,6 +13,13 @@ export const Container = styled.TouchableOpacity<IContainer>`
   border-radius: ${pixels(8)};
 
   flex-direction: column;
+  margin-bottom: ${pixels(16)};
+
+  /* work around android shadow+borderRadius bug */
+  ${Platform.OS !== 'web' &&
+  css`
+    border: ${pixels(1)} solid ${colors.blackDefaultAlpha14};
+  `}
 `;
 
 export const Wrap = styled.View``;
@@ -28,8 +36,6 @@ export const Thumbnail = styled.Image`
   margin-bottom: ${pixels(16)};
   height: ${pixels(162)};
   width: 100%;
-
-  border-radius: ${pixels(6)};
 `;
 
 export const Text = styled(typography.primaryParagraph)`

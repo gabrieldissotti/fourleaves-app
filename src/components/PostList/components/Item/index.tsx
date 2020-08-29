@@ -9,8 +9,8 @@ import {
   Date,
   SeeMore,
 } from './styles';
-import DefaultThumbnail from '../../../../../assets/example-page.png';
-import { Wrapper, Like } from '../../../Statistics';
+import DefaultThumbnail from '../../../../../assets/example-post.png';
+import { Wrapper, Like, Comments, Shares } from '../../../Statistics';
 import { shadows } from '../../../../theme';
 
 import { IProps } from './interfaces';
@@ -24,7 +24,11 @@ const Item: React.FC<IProps> = ({
   date,
 }) => {
   return (
-    <Container isFirst={index === 0} onPress={onPress} style={shadows.Default}>
+    <Container
+      isFirst={index === 0}
+      onPress={onPress}
+      style={{ ...shadows.Default, elevation: 0 }}
+    >
       <Wrap>
         <Text>
           {text.substring(0, 70)}
@@ -38,6 +42,8 @@ const Item: React.FC<IProps> = ({
       <Thumbnail source={DefaultThumbnail} />
       <Wrapper>
         <Like />
+        <Comments />
+        <Shares />
       </Wrapper>
     </Container>
   );

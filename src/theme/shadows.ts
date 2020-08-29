@@ -16,7 +16,7 @@ export const Default = {
     elevation: 2,
   }),
   ...(Platform.OS === 'web' && {
-    boxShadow: `0px 0px ${pixels(4)} ${colors.blackDefaultAlpha14}`,
+    boxShadow: `0px 0px ${pixels(4)} ${colors.blackDark1Alpha12}`,
   }),
 };
 
@@ -34,6 +34,6 @@ export const ToDown = {
     elevation: 4,
   }),
   ...(Platform.OS === 'web' && {
-    boxShadow: `0px ${pixels(3)} ${pixels(8)} ${colors.blackDefaultAlpha14}`,
+    boxShadow: `0px ${pixels(3)} ${pixels(8)} ${colors.blackDark1Alpha12}`,
   }),
 };
