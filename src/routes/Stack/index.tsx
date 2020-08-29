@@ -37,9 +37,9 @@ const Screens: React.FC<IProps> = ({ navigation, style }) => {
             ), //eslint-disable-line
           }}
         >
+          <Stack.Screen name="Posts" component={Posts} />
           <Stack.Screen name="Pages" component={Pages} />
           <Stack.Screen name="SignIn" component={SignIn} />
-          <Stack.Screen name="Posts" component={Posts} />
         </Stack.Navigator>
       </Animated.View>
     </>
