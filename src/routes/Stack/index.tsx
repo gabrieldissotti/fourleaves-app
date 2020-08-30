@@ -5,7 +5,7 @@ import { useIsDrawerOpen } from '@react-navigation/drawer';
 import Header from './components/Header';
 import colors from '../../theme/colors';
 
-import { SignIn, Pages, Posts, Criteries } from '../../pages';
+import { SignIn, Pages, Posts, Requirements } from '../../pages';
 import { IProps } from './interfaces';
 
 import { Shadow } from './styles';
@@ -37,7 +37,7 @@ const Screens: React.FC<IProps> = ({ navigation, style }) => {
             ), //eslint-disable-line
           }}
         >
-          <Stack.Screen name="Criteries" component={Criteries} />
+          <Stack.Screen name="Requirements" component={Requirements} />
           <Stack.Screen name="Posts" component={Posts} />
           <Stack.Screen name="Pages" component={Pages} />
           <Stack.Screen name="SignIn" component={SignIn} />

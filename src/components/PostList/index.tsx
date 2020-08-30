@@ -15,7 +15,7 @@ const PostList: React.FC<IProps> = ({ data, navigation }) => {
         date={item.date}
         statistics={item.statistics}
         index={index}
-        onPress={() => handleNavigation('Criteries')}
+        onPress={() => handleNavigation('Requirements')}
       />
     ),
     [],

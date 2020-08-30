@@ -7,7 +7,7 @@ import { Previous, Next } from '../../components/Buttons';
 import mock from '../../components/ThumbList/mock';
 import { IProps } from './interfaces';
 
-const Criteries: React.FC<IProps> = ({ navigation }) => {
+const Requirements: React.FC<IProps> = ({ navigation }) => {
   return (
     <Container>
       <ThumbList data={mock} navigation={navigation} />
@@ -17,4 +17,4 @@ const Criteries: React.FC<IProps> = ({ navigation }) => {
   );
 };
 
-export default Criteries;
+export default Requirements;
