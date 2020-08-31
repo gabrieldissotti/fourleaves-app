@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 
 import Instagram from './components/Instagram';
 import Facebook from './components/Facebook';
+import Check from './components/Check';
 
 import { IIconFamilyProps } from '../interfaces';
 
@@ -10,6 +11,7 @@ const CustomIcons: React.FC<IIconFamilyProps> = ({ icon, color }) => {
     () => ({
       instagram: Instagram,
       facebook: Facebook,
+      check: Check,
     }),
     [],
   );

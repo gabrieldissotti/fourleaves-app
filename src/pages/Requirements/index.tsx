@@ -1,18 +1,18 @@
 import React from 'react';
-import ThumbList from '../../components/ThumbList';
+import CheckList from '../../components/CheckList';
 
 import { Container } from './styles';
 import { Previous, Next } from '../../components/Buttons';
 
-import mock from '../../components/ThumbList/mock';
+import mock from '../../components/CheckList/mock';
 import { IProps } from './interfaces';
 
 const Requirements: React.FC<IProps> = ({ navigation }) => {
   return (
     <Container>
-      <ThumbList data={mock} navigation={navigation} />
+      <CheckList data={mock} navigation={navigation} />
       <Previous isOpen navigation={navigation} to="Posts" />
-      <Next mode="wizard" step={1} />
+      <Next mode="wizard" step={3} />
     </Container>
   );
 };
