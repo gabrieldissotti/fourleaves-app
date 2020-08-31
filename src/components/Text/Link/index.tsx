@@ -4,14 +4,19 @@ import { Text } from 'react-native';
 import { LinkLib } from './styles';
 import { IProps } from './interfaces';
 
-const Link: React.FC<IProps> = ({ to, content, navigation }) => {
+const Link: React.FC<IProps> = ({
+  to,
+  content,
+  navigation,
+  noWhiteSpaceAround,
+}) => {
   const handleNavigation = () => navigation.navigate(to);
 
   return (
     <Text>
-      &nbsp;
+      {noWhiteSpaceAround ? '' : ' '}
       <LinkLib onPress={handleNavigation}>{content}</LinkLib>
-      &nbsp;
+      {noWhiteSpaceAround ? '' : ' '}
     </Text>
   );
 };
