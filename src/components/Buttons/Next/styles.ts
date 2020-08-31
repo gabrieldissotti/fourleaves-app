@@ -31,6 +31,18 @@ export const Container = styled.TouchableOpacity<IContainer>`
 
       background: ${colors.whiteDefault};
     `}
+
+  ${props =>
+    props.mode === 'share' &&
+    css`
+      bottom: ${pixels(120)};
+    `}
+    
+  ${props =>
+    props.mode === 'newRaffle' &&
+    css`
+      background-color: ${colors.primaryLight2};
+    `}
 `;
 
 export const Text = styled(typography.primaryParagraph)`

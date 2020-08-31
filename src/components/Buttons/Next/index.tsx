@@ -50,9 +50,29 @@ const Next: React.FC<IProps> = ({ text, navigation, to, mode, step }) => {
     </>
   ));
 
+  const Share = memo(() => (
+    <>
+      <Text>{text}</Text>
+      <SimpleLineIcon name="share" color={colors.blackDefault} size={20} />
+    </>
+  ));
+
+  const renderButtonByModeProp = useCallback(() => {
+    switch (mode) {
+      case 'wizard':
+        return <Wizard />;
+
+      case 'share':
+        return <Share />;
+
+      default:
+        return <Default />;
+    }
+  }, [mode]);
+
   return (
     <Container onPress={handleNavigation} mode={mode} style={shadows.Default}>
-      {mode === 'wizard' ? <Wizard /> : <Default />}
+      {renderButtonByModeProp()}
     </Container>
   );
 };
