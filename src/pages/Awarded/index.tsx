@@ -11,7 +11,7 @@ const Awarded: React.FC<IProps> = ({ navigation }) => {
   return (
     <Container>
       <ThumbList data={mock} navigation={navigation} />
-      <Previous />
+      <Previous isOpen isRepeat />
       <Next mode="share" text="Compartilhar" />
       <Next mode="newRaffle" text="Novo sorteio" />
     </Container>

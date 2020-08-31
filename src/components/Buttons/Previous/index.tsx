@@ -7,7 +7,7 @@ import { IconsMinds } from '../../../icons';
 
 import { IProps } from './interfaces';
 
-const Previous: React.FC<IProps> = ({ isOpen, navigation, to }) => {
+const Previous: React.FC<IProps> = ({ isOpen, navigation, to, isRepeat }) => {
   const handleNavigation = () => navigation?.navigate(to);
 
   return (
@@ -16,7 +16,14 @@ const Previous: React.FC<IProps> = ({ isOpen, navigation, to }) => {
       style={shadows.Default}
       onPress={handleNavigation}
     >
-      {isOpen && (
+      {isOpen && isRepeat && (
+        <>
+          <IconsMinds name="repeat-6" color={colors.whiteDefault} size={20} />
+          <Text>repetir</Text>
+        </>
+      )}
+
+      {isOpen && !isRepeat && (
         <>
           <IconsMinds name="left" color={colors.whiteDefault} size={24} />
           <Text>voltar</Text>
