@@ -6,7 +6,7 @@ import { colors, typography } from '../../theme';
 export const Container = styled.TouchableOpacity`
   width: 100%;
   height: ${pixels(90)};
-  padding: ${pixels(17)} ${pixels(8)};
+  padding: ${pixels(17)} 0;
 
   flex-direction: row;
   align-items: center;
