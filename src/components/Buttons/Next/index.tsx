@@ -8,8 +8,21 @@ import { Step } from './components';
 import { IProps } from './interfaces';
 import { IStatus } from './components/Step/interfaces';
 
-const Next: React.FC<IProps> = ({ text, navigation, to, mode, step }) => {
-  const handleNavigation = () => navigation?.navigate(to);
+const Next: React.FC<IProps> = ({
+  text,
+  navigation,
+  to,
+  mode,
+  step,
+  onPress,
+}) => {
+  const handleNavigation = () => {
+    if (onPress) {
+      return onPress();
+    }
+
+    return navigation?.navigate(to);
+  };
 
   const getStatusByElementStaticStep = useCallback(
     (elementStep: number): IStatus => {

@@ -6,6 +6,7 @@ export interface IProps {
   text?: string;
   to?: string;
   step?: number;
+  onPress?: any;
 }
 export interface IContainer {
   mode?: IMode;
