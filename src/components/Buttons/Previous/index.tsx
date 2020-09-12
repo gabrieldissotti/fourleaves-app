@@ -1,6 +1,5 @@
 import React from 'react';
 
-import { TouchableOpacity } from 'react-native';
 import { Container, Text } from './styles';
 import { colors, shadows } from '../../../theme';
 import { IconsMinds } from '../../../icons';

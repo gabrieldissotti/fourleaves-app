@@ -23,7 +23,7 @@ const SignIn: React.FC<IProps> = ({ navigation }) => {
     if (Platform.OS !== 'web') {
       return;
     }
-    const query = ''; // new URLSearchParams(window.location.search);
+    const query = new URLSearchParams(window.location.search);
     const data = query.get('data');
 
     if (!data) return;
