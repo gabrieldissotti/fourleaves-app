@@ -1,4 +1,5 @@
 import 'react-native-gesture-handler';
+import 'url-search-params-polyfill';
 
 import React, { useEffect } from 'react';
 import { updateApp } from './services/expo';

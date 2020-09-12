@@ -1,5 +1,5 @@
 export const FacebookConfig = {
-  appId: process.env.REACT_APP_FACEBOOK_APP_ID,
+  appId: 2684808968425884,
   apiVersion: 'v8.0',
-  redirectURI: `${process.env.REACT_APP_API_BASE_URL}/facebook/sessions/`,
+  redirectURI: `http://localhost:3333/facebook/sessions/`,
 };

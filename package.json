@@ -4,8 +4,9 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "web": "expo start --web",
-    "start": "react-native start",
-    "test": "jest"
+    "start": "yarn connect:api && yarn react-native start",
+    "test": "jest",
+    "connect:api": "adb reverse tcp:3333 tcp:3333"
   },
   "dependencies": {
     "@expo-google-fonts/nunito": "^0.1.0",
@@ -21,6 +22,7 @@
     "expo-splash-screen": "~0.4.0",
     "expo-status-bar": "^1.0.0",
     "expo-updates": "~0.2.10",
+    "install": "^0.13.0",
     "react": "~16.11.0",
     "react-dom": "~16.11.0",
     "react-native": "~0.62.2",
@@ -32,7 +34,9 @@
     "react-native-svg": "12.1.0",
     "react-native-unimodules": "~0.10.1",
     "react-native-web": "~0.11.7",
-    "styled-components": "^5.1.1"
+    "react-native-webview": "9.4.0",
+    "styled-components": "^5.1.1",
+    "url-search-params-polyfill": "^8.1.0"
   },
   "devDependencies": {
     "@babel/core": "~7.9.0",
