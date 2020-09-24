@@ -37,7 +37,7 @@ const Screens: React.FC<IProps> = ({ navigation, style }) => {
               headerLeft: () => null,
               headerTitle: (props: any) => (
                 <Header {...props} navigation={navigation} />
-              ), //eslint-disable-line
+              ),
             }}
           >
             <Stack.Screen name="SignIn" component={SignIn} />

@@ -1,6 +1,6 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useContext } from 'react';
 import { View } from 'react-native';
-import { DrawerContentScrollView } from '@react-navigation/drawer';
+
 import {
   Container,
   DrawerItem,
@@ -13,15 +13,22 @@ import {
   Socials,
 } from './styles';
 
+import { AuthContext } from '../../../../context/AuthContext';
+
 import { SocialNetwork } from '../../../../components/Buttons';
 
 const Content: React.FC<any> = ({ navigation, ...rest }) => {
+  const auth = useContext(AuthContext);
+
   const [isFocused, setIsFocused] = useState<string>('SignIn');
 
-  const handleNavigate = useCallback((routeName: string) => {
-    setIsFocused(routeName);
-    navigation.navigate(routeName);
-  }, []);
+  const handleNavigate = useCallback(
+    (routeName: string) => {
+      setIsFocused(routeName);
+      navigation.navigate(routeName);
+    },
+    [navigation],
+  );
 
   return (
     <Container {...rest}>
@@ -29,13 +36,12 @@ const Content: React.FC<any> = ({ navigation, ...rest }) => {
         <Frame>
           <Photo
             source={{
-              uri:
-                'https://avatars2.githubusercontent.com/u/33178519?s=460&u=07dc9223c94ce98f4c64fc397d592ee56b24df11&v=4',
+              uri: auth?.user?.picture_url,
             }}
           />
         </Frame>
 
-        <Name>Jacob Jones</Name>
+        <Name>{auth?.user?.user_name}</Name>
       </Header>
 
       <View>

@@ -1,0 +1,100 @@
+import React, { createContext, useCallback, useState, useEffect } from 'react';
+import { WebView } from 'react-native-webview';
+import { AsyncStorage } from 'react-native';
+
+import FourLeavesAPI from '../apis/FourLeaves';
+import { isWebVersion } from '../constants';
+
+type User = {
+  user_id: string;
+  user_name: string;
+  picture_url: string;
+};
+
+type AuthState = {
+  user: User;
+  token: string;
+};
+
+type AuthContextData = AuthState & {
+  handleSignIn(data: AuthState): void;
+};
+
+export const AuthContext = createContext<AuthContextData>(
+  {} as AuthContextData,
+);
+
+export const AuthProvider: React.FC = ({ children }) => {
+  const [authData, setAuthData] = useState<AuthState>({} as AuthContextData);
+  const [
+    isAuthenticatingOnMobileDevice,
+    setIsAuthenticatingOnMobileDevice,
+  ] = useState(false);
+
+  const getTokenFromActualUrl = useCallback((): string | null => {
+    const query = new URLSearchParams(window?.location?.search);
+    const token: string | null = query.get('token');
+
+    return token;
+  }, []);
+
+  const finishAuthentication = useCallback(async (param: string | any): Promise<
+    void
+  > => {
+    const token = !isWebVersion ? param.nativeEvent.data : param;
+
+    AsyncStorage.setItem('token', token);
+
+    const user = await FourLeavesAPI.getUserInfoByStoredToken();
+
+    setAuthData({
+      token,
+      user,
+    });
+
+    if (!isWebVersion) {
+      setIsAuthenticatingOnMobileDevice(false);
+    }
+  }, []);
+
+  const handleSignIn = useCallback(() => {
+    if (isWebVersion) {
+      FourLeavesAPI.signInWeb();
+    } else {
+      setIsAuthenticatingOnMobileDevice(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (isWebVersion) {
+      const token = getTokenFromActualUrl();
+      if (!token) return;
+
+      finishAuthentication(token);
+      // TODO adicionar loading enquanto existir o ?token na url e remover assim que executar esse finish, tratar mobile quando webview is open também
+    }
+  }, [finishAuthentication, getTokenFromActualUrl]);
+
+  if (isAuthenticatingOnMobileDevice) {
+    return (
+      <WebView
+        source={{
+          uri: FourLeavesAPI.getFacebookLoginURL(),
+        }}
+        onMessage={finishAuthentication}
+      />
+    );
+  }
+
+  return (
+    <AuthContext.Provider
+      value={{
+        user: authData.user,
+        token: authData.token,
+        handleSignIn,
+      }}
+    >
+      {children}
+    </AuthContext.Provider>
+  );
+};

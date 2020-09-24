@@ -7,6 +7,7 @@ import { screensAnimations } from './animations';
 
 import Screens from '../Stack';
 import Content from './components/Content';
+import { AuthProvider } from '../../context/AuthContext';
 
 const Drawer = createDrawerNavigator();
 
@@ -19,27 +20,29 @@ const DrawerContainer: React.FC = () => {
 
   return (
     <Container style={{ flex: 1 }}>
-      <Drawer.Navigator
-        initialRouteName="Pages"
-        drawerType="slide"
-        overlayColor="transparent"
-        drawerStyle={{ width: '70%', backgroundColor: 'transparent' }}
-        drawerContentOptions={{
-          activeBackgroundColor: 'transparent',
-        }}
-        sceneContainerStyle={{
-          backgroundColor: 'transparent',
-        }}
-        drawerContent={props => {
-          setProgress(props.progress);
+      <AuthProvider>
+        <Drawer.Navigator
+          initialRouteName="Pages"
+          drawerType="slide"
+          overlayColor="transparent"
+          drawerStyle={{ width: '70%', backgroundColor: 'transparent' }}
+          drawerContentOptions={{
+            activeBackgroundColor: 'transparent',
+          }}
+          sceneContainerStyle={{
+            backgroundColor: 'transparent',
+          }}
+          drawerContent={props => {
+            setProgress(props.progress);
 
-          return <Content {...props} />;
-        }}
-      >
-        <Drawer.Screen name="Screens">
-          {props => <Screens {...props} style={animations} />}
-        </Drawer.Screen>
-      </Drawer.Navigator>
+            return <Content {...props} />;
+          }}
+        >
+          <Drawer.Screen name="Screens">
+            {props => <Screens {...props} style={animations} />}
+          </Drawer.Screen>
+        </Drawer.Navigator>
+      </AuthProvider>
     </Container>
   );
 };
