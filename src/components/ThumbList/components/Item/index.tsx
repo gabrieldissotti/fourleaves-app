@@ -13,11 +13,13 @@ const Item: React.FC<IProps> = ({
   index,
   onPress,
 }) => {
+  const displayText = text.length > 26 ? `${text.substr(0, 26)}...` : text;
+
   return (
     <Container isFirst={index === 0} onPress={onPress}>
-      <Thumbnail source={DefaultThumbnail} />
+      <Thumbnail source={{ uri: thumbnail }} />
       <Wrap>
-        <Text>{text}</Text>
+        <Text>{displayText}</Text>
         <Wrapper>
           <Likes />
         </Wrapper>

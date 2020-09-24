@@ -34,6 +34,26 @@ class FourLeaves {
     return user;
   }
 
+  async getPages(): Promise<
+    Array<{
+      id: string;
+      name: string;
+      thumbnail: string;
+    }>
+  > {
+    await this.configureTokenToRequest();
+
+    const { data: pages } = await this.axios.get<
+      Array<{
+        id: string;
+        name: string;
+        thumbnail: string;
+      }>
+    >('/facebook/pages');
+
+    return pages;
+  }
+
   getFacebookLoginURL(): string {
     const baseURL = `https://www.facebook.com/${FacebookConfig.apiVersion}/dialog/oauth?`;
     const clientId = `client_id=${FacebookConfig.appId}`;
@@ -46,8 +66,9 @@ class FourLeaves {
     });
 
     const state = `&state=${stateString}`;
+    const scope = `&scope=email,pages_show_list,public_profile`;
 
-    return baseURL + clientId + redirectURI + state;
+    return baseURL + clientId + redirectURI + state + scope;
   }
 
   signInWeb(): void {

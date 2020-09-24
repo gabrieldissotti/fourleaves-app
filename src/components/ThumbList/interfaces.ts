@@ -1,10 +1,10 @@
-import { IProps as IItemProps } from './components/Item/interfaces';
-
-export interface IItem extends IItemProps {
-  id: string;
-}
+type ItemData = {
+  thumbnail: string;
+  text: string;
+  statistics?: string;
+};
 
 export interface IProps {
-  data: IItem[];
+  data: ItemData[];
   navigation?: any;
 }

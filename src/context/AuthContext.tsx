@@ -18,6 +18,7 @@ type AuthState = {
 
 type AuthContextData = AuthState & {
   handleSignIn(data: AuthState): void;
+  isReadyToNavigate: boolean;
 };
 
 export const AuthContext = createContext<AuthContextData>(
@@ -26,6 +27,7 @@ export const AuthContext = createContext<AuthContextData>(
 
 export const AuthProvider: React.FC = ({ children }) => {
   const [authData, setAuthData] = useState<AuthState>({} as AuthContextData);
+  const [isReadyToNavigate, setIsReadyToNavigate] = useState<boolean>(false);
   const [
     isAuthenticatingOnMobileDevice,
     setIsAuthenticatingOnMobileDevice,
@@ -55,6 +57,8 @@ export const AuthProvider: React.FC = ({ children }) => {
     if (!isWebVersion) {
       setIsAuthenticatingOnMobileDevice(false);
     }
+
+    setIsReadyToNavigate(true);
   }, []);
 
   const handleSignIn = useCallback(() => {
@@ -91,6 +95,7 @@ export const AuthProvider: React.FC = ({ children }) => {
       value={{
         user: authData.user,
         token: authData.token,
+        isReadyToNavigate,
         handleSignIn,
       }}
     >
