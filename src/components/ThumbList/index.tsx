@@ -12,7 +12,7 @@ const ThumbList: React.FC<IProps> = ({ data, navigation }) => {
       <Item
         thumbnail={item.thumbnail}
         text={item.text}
-        statistics={item.statistics}
+        likesCount={item.likesCount}
         index={index}
         onPress={() => handleNavigation('Posts')}
       />

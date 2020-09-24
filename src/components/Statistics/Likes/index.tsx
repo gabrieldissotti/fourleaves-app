@@ -4,11 +4,15 @@ import { Container, Text } from './styles';
 import { IconsMinds } from '../../../icons';
 import { colors } from '../../../theme';
 
-const Likes: React.FC = () => {
+type Props = {
+  count: number;
+};
+
+const Likes: React.FC<Props> = ({ count }) => {
   return (
     <Container>
       <IconsMinds name="like" color={colors.blackLight4} size={16} />
-      <Text>28mi</Text>
+      <Text>{count}</Text>
     </Container>
   );
 };

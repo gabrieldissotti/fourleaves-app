@@ -9,7 +9,7 @@ import { IProps } from './interfaces';
 const Item: React.FC<IProps> = ({
   thumbnail,
   text,
-  statistics,
+  likesCount,
   index,
   onPress,
 }) => {
@@ -21,7 +21,7 @@ const Item: React.FC<IProps> = ({
       <Wrap>
         <Text>{displayText}</Text>
         <Wrapper>
-          <Likes />
+          <Likes count={likesCount} />
         </Wrapper>
       </Wrap>
     </Container>

@@ -39,6 +39,7 @@ class FourLeaves {
       id: string;
       name: string;
       thumbnail: string;
+      likes: number;
     }>
   > {
     await this.configureTokenToRequest();
@@ -48,6 +49,7 @@ class FourLeaves {
         id: string;
         name: string;
         thumbnail: string;
+        likes: number;
       }>
     >('/facebook/pages');
 
