@@ -2,20 +2,12 @@ import React, { useCallback } from 'react';
 import { FlatList, SafeAreaView } from './styles';
 
 import { Item } from './components';
-import { IProps } from './interfaces';
+import { Props } from './interfaces';
 
-const CheckList: React.FC<IProps> = ({ data, navigation }) => {
-  const handleNavigation = (to: string) => navigation?.navigate(to);
-
+const CheckList: React.FC<Props> = ({ data }) => {
   const renderItem = useCallback(
     ({ item, index }) => (
-      <Item
-        text={item.text}
-        value={item.text}
-        isChecked
-        index={index}
-        onPress={() => handleNavigation('Posts')}
-      />
+      <Item text={item.text} value={item.value} index={index} />
     ),
     [],
   );

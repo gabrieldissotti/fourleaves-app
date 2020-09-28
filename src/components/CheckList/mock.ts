@@ -1,10 +1,8 @@
-import { IItem } from './interfaces';
+import { Item } from './interfaces';
 
-const page: IItem = {
+const page: Item = {
   id: 'string',
-  thumbnail: 'string',
   text: 'Millenium',
-  statistics: 'string',
 };
 
 export default [

@@ -4,8 +4,6 @@ export interface IProps {
   value: string;
   text: string;
   index: number;
-  isChecked: boolean;
-  onPress?: (params: GestureResponderEvent) => void;
 }
 
 export interface IContainer {
