@@ -1,8 +1,8 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useContext } from 'react';
 import { FlatList, SafeAreaView } from './styles';
 
 import { Item } from './components';
-import { IProps } from './interfaces';
+import { RaffleContext } from '../../context/RaffleContext';
 
 type Post = {
   id: string;
@@ -10,9 +10,34 @@ type Post = {
   created_time: Date;
 };
 
-const ThumbList: React.FC<IProps> = ({ data, navigation }) => {
-  const handleNavigation = (to: string, posts: Post[]) =>
-    navigation?.navigate(to, { posts });
+type ItemData = {
+  thumbnail: string;
+  text: string;
+  statistics?: string;
+};
+
+type Props = {
+  data: ItemData[];
+  navigation?: any;
+};
+
+type HandlePressData = {
+  to: string;
+  posts: Post[];
+  pageId: string;
+};
+
+const ThumbList: React.FC<Props> = ({ data, navigation }) => {
+  const raffle = useContext(RaffleContext);
+
+  const handlePressItem = useCallback(
+    ({ pageId, to, posts }: HandlePressData) => {
+      raffle.changePageId(pageId);
+
+      navigation?.navigate(to, { posts }); // eslint-disable-line
+    },
+    [],
+  );
 
   const renderItem = useCallback(
     ({ item, index }) => (
@@ -21,7 +46,13 @@ const ThumbList: React.FC<IProps> = ({ data, navigation }) => {
         text={item.text}
         likesCount={item.likesCount}
         index={index}
-        onPress={() => handleNavigation('Posts', item.posts)}
+        onPress={() =>
+          handlePressItem({
+            to: 'Posts',
+            posts: item.posts,
+            pageId: item.id,
+          })
+        } // eslint-disable-line
       />
     ),
     [],

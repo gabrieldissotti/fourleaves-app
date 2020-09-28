@@ -1,12 +1,19 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useContext } from 'react';
 import { FlatList, SafeAreaView } from './styles';
 
 import { Item } from './components';
 import { IProps } from './interfaces';
+import { RaffleContext } from '../../context/RaffleContext';
 
 const PostList: React.FC<IProps> = ({ data, navigation }) => {
-  const handleNavigation = useCallback(
-    (to: string) => navigation?.navigate(to),
+  const raffle = useContext(RaffleContext);
+
+  const handleSelectPost = useCallback(
+    (postId: string) => {
+      raffle.changePostId(postId);
+
+      navigation?.navigate('Requirements'); // eslint-disable-line
+    },
     [navigation],
   );
 
@@ -18,10 +25,10 @@ const PostList: React.FC<IProps> = ({ data, navigation }) => {
         date={item.date}
         statistics={item.statistics}
         index={index}
-        onPress={() => handleNavigation('Requirements')}
+        onPress={() => handleSelectPost(item.id)}
       />
     ),
-    [handleNavigation],
+    [handleSelectPost],
   );
 
   const keyExtractor = useCallback(item => item.id, []);

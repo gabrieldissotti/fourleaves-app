@@ -11,6 +11,7 @@ import { IProps } from './interfaces';
 import { Shadow } from './styles';
 
 import { HeaderProvider } from '../../context/HeaderContext';
+import { RaffleProvider } from '../../context/RaffleContext';
 
 const Stack = createStackNavigator();
 
@@ -22,30 +23,32 @@ const Screens: React.FC<IProps> = ({ navigation, style }) => {
       <Shadow style={[{ flex: 1, overflow: 'hidden' }, style]} />
       <Animated.View style={[{ flex: 1, overflow: 'hidden' }, style]}>
         <HeaderProvider>
-          <Stack.Navigator
-            screenOptions={{
-              headerStyle: {
-                backgroundColor: colors.primaryLight2,
-                borderBottomLeftRadius: 30,
-                borderBottomRightRadius: 30,
-                height: 139,
-              },
-              cardStyle: {
-                backgroundColor: colors.whiteDefault,
-                borderBottomLeftRadius: isDrawerOpen ? 24 : 0,
-              },
-              headerLeft: () => null,
-              headerTitle: (props: any) => (
-                <Header {...props} navigation={navigation} />
-              ),
-            }}
-          >
-            <Stack.Screen name="SignIn" component={SignIn} />
-            <Stack.Screen name="Pages" component={Pages} />
-            <Stack.Screen name="Posts" component={Posts} />
-            <Stack.Screen name="Requirements" component={Requirements} />
-            <Stack.Screen name="Awarded" component={Awarded} />
-          </Stack.Navigator>
+          <RaffleProvider>
+            <Stack.Navigator
+              screenOptions={{
+                headerStyle: {
+                  backgroundColor: colors.primaryLight2,
+                  borderBottomLeftRadius: 30,
+                  borderBottomRightRadius: 30,
+                  height: 139,
+                },
+                cardStyle: {
+                  backgroundColor: colors.whiteDefault,
+                  borderBottomLeftRadius: isDrawerOpen ? 24 : 0,
+                },
+                headerLeft: () => null,
+                headerTitle: (props: any) => (
+                  <Header {...props} navigation={navigation} />
+                ),
+              }}
+            >
+              <Stack.Screen name="SignIn" component={SignIn} />
+              <Stack.Screen name="Pages" component={Pages} />
+              <Stack.Screen name="Posts" component={Posts} />
+              <Stack.Screen name="Requirements" component={Requirements} />
+              <Stack.Screen name="Awarded" component={Awarded} />
+            </Stack.Navigator>
+          </RaffleProvider>
         </HeaderProvider>
       </Animated.View>
     </>
