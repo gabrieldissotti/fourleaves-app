@@ -7,7 +7,7 @@ import { IContainer } from './interfaces';
 
 export const Container = styled.TouchableOpacity<IContainer>`
   width: 100%;
-  height: ${pixels(324)};
+  height: ${props => (props.hasThumbnail ? pixels(324) : 'auto')};
   padding: ${pixels(16)};
 
   border-radius: ${pixels(8)};
@@ -22,7 +22,9 @@ export const Container = styled.TouchableOpacity<IContainer>`
   `}
 `;
 
-export const Wrap = styled.View``;
+export const Wrap = styled.View<{ hasThumbnail: boolean }>`
+  margin-bottom: ${props => (!props.hasThumbnail ? pixels(16) : 0)};
+`;
 
 export const Actions = styled.View`
   margin-top: ${pixels(10)};

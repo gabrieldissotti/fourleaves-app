@@ -5,7 +5,10 @@ import { Item } from './components';
 import { IProps } from './interfaces';
 
 const PostList: React.FC<IProps> = ({ data, navigation }) => {
-  const handleNavigation = (to: string) => navigation?.navigate(to);
+  const handleNavigation = useCallback(
+    (to: string) => navigation?.navigate(to),
+    [navigation],
+  );
 
   const renderItem = useCallback(
     ({ item, index }) => (
@@ -15,10 +18,10 @@ const PostList: React.FC<IProps> = ({ data, navigation }) => {
         date={item.date}
         statistics={item.statistics}
         index={index}
-        onPress={() => handleNavigation('Awarded')}
+        onPress={() => handleNavigation('Requirements')}
       />
     ),
-    [],
+    [handleNavigation],
   );
 
   const keyExtractor = useCallback(item => item.id, []);

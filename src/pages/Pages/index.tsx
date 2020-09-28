@@ -13,13 +13,15 @@ const SignUp: React.FC<IProps> = ({ navigation }) => {
   const header = useContext(HeaderContext);
 
   const fetchPages = useCallback(async () => {
-    const updatedPagesList: Page[] = await FourLeavesAPI.getPages();
+    const updatedPagesList: Page[] = await FourLeavesAPI.getPagesWithPosts();
+    if (!updatedPagesList) return;
 
-    const formattedPages = updatedPagesList.map(page => ({
+    const formattedPages = updatedPagesList?.map(page => ({
       id: page.id,
       text: page.name,
       thumbnail: page.thumbnail,
       likesCount: page.likes,
+      posts: page.posts,
     }));
 
     setPages(formattedPages);

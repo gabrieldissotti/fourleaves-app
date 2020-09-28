@@ -3,6 +3,18 @@ import axios, { AxiosInstance } from 'axios';
 import { AsyncStorage, Platform } from 'react-native';
 import { FacebookConfig } from '../configs';
 
+type Page = {
+  id: string;
+  name: string;
+  thumbnail: string;
+  likes: number;
+  posts: Array<{
+    id: string;
+    message: string;
+    created_time: Date;
+  }>;
+};
+
 class FourLeaves {
   private axios: AxiosInstance;
 
@@ -34,24 +46,10 @@ class FourLeaves {
     return user;
   }
 
-  async getPages(): Promise<
-    Array<{
-      id: string;
-      name: string;
-      thumbnail: string;
-      likes: number;
-    }>
-  > {
+  async getPagesWithPosts(): Promise<Page[]> {
     await this.configureTokenToRequest();
 
-    const { data: pages } = await this.axios.get<
-      Array<{
-        id: string;
-        name: string;
-        thumbnail: string;
-        likes: number;
-      }>
-    >('/facebook/pages');
+    const { data: pages } = await this.axios.get<Page[]>('/facebook/pages');
 
     return pages;
   }
@@ -67,8 +65,20 @@ class FourLeaves {
       platform: Platform.OS,
     });
 
+    const permissions = [
+      'email',
+      'user_photos',
+      'user_friends',
+      'pages_show_list',
+      'public_profile',
+      'pages_manage_posts',
+      'pages_manage_instant_articles',
+      'pages_read_engagement',
+      'pages_read_user_content',
+    ];
+
     const state = `&state=${stateString}`;
-    const scope = `&scope=email,pages_show_list,public_profile`;
+    const scope = `&scope=${permissions.join(',')}`;
 
     return baseURL + clientId + redirectURI + state + scope;
   }

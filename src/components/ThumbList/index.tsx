@@ -4,8 +4,15 @@ import { FlatList, SafeAreaView } from './styles';
 import { Item } from './components';
 import { IProps } from './interfaces';
 
+type Post = {
+  id: string;
+  message: string;
+  created_time: Date;
+};
+
 const ThumbList: React.FC<IProps> = ({ data, navigation }) => {
-  const handleNavigation = (to: string) => navigation?.navigate(to);
+  const handleNavigation = (to: string, posts: Post[]) =>
+    navigation?.navigate(to, { posts });
 
   const renderItem = useCallback(
     ({ item, index }) => (
@@ -14,7 +21,7 @@ const ThumbList: React.FC<IProps> = ({ data, navigation }) => {
         text={item.text}
         likesCount={item.likesCount}
         index={index}
-        onPress={() => handleNavigation('Posts')}
+        onPress={() => handleNavigation('Posts', item.posts)}
       />
     ),
     [],

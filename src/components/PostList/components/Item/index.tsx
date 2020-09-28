@@ -26,10 +26,11 @@ const Item: React.FC<IProps> = ({
   return (
     <Container
       isFirst={index === 0}
+      hasThumbnail={!!thumbnail}
       onPress={onPress}
       style={{ ...shadows.Default, elevation: 0 }}
     >
-      <Wrap>
+      <Wrap hasThumbnail={!!thumbnail}>
         <Text>
           {text.substring(0, 70)}
           ...
@@ -39,9 +40,11 @@ const Item: React.FC<IProps> = ({
           <Date>quarta-feira, 25 fev. 2019</Date>
         </Actions>
       </Wrap>
-      <Thumbnail source={DefaultThumbnail} />
+
+      {!!thumbnail && <Thumbnail source={{ uri: thumbnail }} />}
+
       <Wrapper>
-        <Likes />
+        <Likes count={1} />
         <Comments />
         <Shares />
       </Wrapper>

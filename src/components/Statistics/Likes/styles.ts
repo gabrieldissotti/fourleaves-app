@@ -5,12 +5,14 @@ import { isWebVersion } from '../../../constants';
 
 export const Container = styled.View`
   flex-direction: row;
-  margin-left: ${pixels(12)};
+  /* margin-left: ${pixels(12)}; */
 
-  ${!isWebVersion &&
-  css`
-    align-items: center;
-  `}
+  ${
+    !isWebVersion &&
+    css`
+      align-items: center;
+    `
+  }
 `;
 
 export const Text = styled(typography.primarySmall)`
