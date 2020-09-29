@@ -5,10 +5,10 @@ import { Container, Text } from './styles';
 import { colors, shadows } from '../../../theme';
 import { Step } from './components';
 
-import { IProps } from './interfaces';
+import { Props } from './interfaces';
 import { IStatus } from './components/Step/interfaces';
 
-const Next: React.FC<IProps> = ({
+const Next: React.FC<Props> = ({
   text,
   navigation,
   to,

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useMemo } from 'react';
+import React, { useCallback, useContext, useEffect, useMemo } from 'react';
 import CheckList from '../../components/CheckList';
 
 import { Container } from './styles';
@@ -6,9 +6,11 @@ import { Previous, Next } from '../../components/Buttons';
 
 import { Props, Item } from './interfaces';
 import { HeaderContext } from '../../context/HeaderContext';
+import { RaffleContext } from '../../context/RaffleContext';
 
 const Requirements: React.FC<Props> = ({ navigation }) => {
   const header = useContext(HeaderContext);
+  const raffle = useContext(RaffleContext);
 
   const requirements = useMemo<Item[]>(
     () => [
@@ -32,6 +34,10 @@ const Requirements: React.FC<Props> = ({ navigation }) => {
     [],
   );
 
+  const handleRaffle = useCallback(() => {
+    console.log('sort');
+  }, []);
+
   useEffect(() => {
     header.changeHeaderTitleAndDescription({
       title: 'Selecione os critérios',
@@ -43,7 +49,14 @@ const Requirements: React.FC<Props> = ({ navigation }) => {
     <Container>
       <CheckList data={requirements} navigation={navigation} />
       <Previous isOpen navigation={navigation} to="Posts" />
-      <Next mode="wizard" step={3} />
+
+      {raffle.requirements.length > 0 ? (
+        <>
+          <Next mode="default" text="Sortear agora" onPress={handleRaffle} />
+        </>
+      ) : (
+        <Next mode="wizard" step={3} />
+      )}
     </Container>
   );
 };
