@@ -2,7 +2,11 @@ export type Item = {
   id: string;
   thumbnail: string;
   text: string;
-  statistics?: string;
+  statistics?: {
+    likes: number;
+    comments: number;
+    shares: number;
+  };
   date: Date;
 };
 

@@ -13,6 +13,9 @@ type Post = {
   id: string;
   message: string;
   full_picture: string;
+  likes: number;
+  comments: number;
+  shares: number;
 };
 
 type FormattedPost = {
@@ -20,6 +23,11 @@ type FormattedPost = {
   thumbnail: string;
   text: string;
   date: Date;
+  statistics: {
+    likes: number;
+    comments: number;
+    shares: number;
+  };
 };
 
 type UseRouteProp = RouteProp<
@@ -46,6 +54,11 @@ const Posts: React.FC<IProps> = ({ navigation }) => {
         thumbnail: post?.full_picture,
         text: post.message,
         date: post.created_time,
+        statistics: {
+          likes: post.likes,
+          comments: post.comments,
+          shares: post.shares,
+        },
       })),
     [params.posts],
   );

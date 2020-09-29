@@ -32,21 +32,22 @@ const Item: React.FC<IProps> = ({
     >
       <Wrap hasThumbnail={!!thumbnail}>
         <Text>
-          {text.substring(0, 70)}
+          {text && text.substring(0, 70)}
           ...
         </Text>
         <Actions>
           <SeeMore>ver mais</SeeMore>
-          <Date>quarta-feira, 25 fev. 2019</Date>
+          {/* <Date>quarta-feira, 25 fev. 2019</Date> */}
+          <Date>{date}</Date>
         </Actions>
       </Wrap>
 
       {!!thumbnail && <Thumbnail source={{ uri: thumbnail }} />}
 
       <Wrapper>
-        <Likes count={1} />
-        <Comments />
-        <Shares />
+        <Likes count={statistics.likes} />
+        <Comments count={statistics.comments} />
+        <Shares count={statistics.shares} />
       </Wrapper>
     </Container>
   );

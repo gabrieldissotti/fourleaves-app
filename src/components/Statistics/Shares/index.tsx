@@ -4,11 +4,15 @@ import { Container, Text } from './styles';
 import { SimpleLineIcon } from '../../../icons';
 import { colors } from '../../../theme';
 
-const Shares: React.FC = () => {
+type Props = {
+  count: number;
+};
+
+const Shares: React.FC<Props> = ({ count }) => {
   return (
     <Container>
       <SimpleLineIcon name="share" color={colors.blackLight4} size={13} />
-      <Text>12k</Text>
+      <Text>{count}</Text>
     </Container>
   );
 };

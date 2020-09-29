@@ -12,6 +12,9 @@ type Page = {
     id: string;
     message: string;
     created_time: Date;
+    likes: number;
+    comments: number;
+    shares: number;
   }>;
 };
 
