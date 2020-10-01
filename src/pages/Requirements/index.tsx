@@ -15,10 +15,6 @@ const Requirements: React.FC<Props> = ({ navigation }) => {
   const requirements = useMemo<Item[]>(
     () => [
       {
-        text: 'Curtir página',
-        value: 'like_page',
-      },
-      {
         text: 'Curtir publicação',
         value: 'like_post',
       },
