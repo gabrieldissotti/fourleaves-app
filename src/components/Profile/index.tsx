@@ -1,28 +1,17 @@
 import React from 'react';
 
 import { Container, Thumbnail, Text, Wrap } from './styles';
-import DefaultThumbnail from '../../../assets/example-people.png';
 import { Link } from '../Text';
 
-import { IProps } from './interfaces';
+import { Props } from './interfaces';
 
-const Profile: React.FC<IProps> = ({
-  thumbnail,
-  name,
-  onPress,
-  navigation,
-}) => {
+const Profile: React.FC<Props> = ({ thumbnail, name, onPress, link }) => {
   return (
     <Container onPress={onPress}>
-      <Thumbnail source={DefaultThumbnail} />
+      <Thumbnail source={{ uri: thumbnail }} />
       <Wrap>
         <Text>{name}</Text>
-        <Link
-          to="Pages"
-          navigation={navigation}
-          content="ver perfil no facebook"
-          noWhiteSpaceAround
-        />
+        <Link href={link} content="ver perfil no facebook" noWhiteSpaceAround />
       </Wrap>
     </Container>
   );

@@ -91,6 +91,30 @@ class FourLeaves {
 
     window.location.href = redirectURL;
   }
+
+  async raffleAUserByPost(
+    postId: string,
+  ): Promise<{
+    winner: {
+      id: string;
+      name: string;
+      pictureUrl: string;
+      profileLink?: string;
+    };
+  }> {
+    await this.configureTokenToRequest();
+
+    const { data: response } = await this.axios.post<{
+      winner: {
+        id: string;
+        name: string;
+        pictureUrl: string;
+        profileLink?: string;
+      };
+    }>('/facebook/raffle', { postId });
+
+    return response;
+  }
 }
 
 export default new FourLeaves();

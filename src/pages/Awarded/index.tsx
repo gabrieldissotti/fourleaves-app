@@ -7,9 +7,11 @@ import Paragraph from '../../components/Text/Paragraph';
 
 import { IProps } from './interfaces';
 import { HeaderContext } from '../../context/HeaderContext';
+import { RaffleContext } from '../../context/RaffleContext';
 
 const Awarded: React.FC<IProps> = ({ navigation }) => {
   const header = useContext(HeaderContext);
+  const raffle = useContext(RaffleContext);
 
   useEffect(() => {
     header.changeHeaderTitleAndDescription({
@@ -20,7 +22,11 @@ const Awarded: React.FC<IProps> = ({ navigation }) => {
 
   return (
     <Container>
-      <Profile name="Dianne Russell" thumbnail="" navigation={navigation} />
+      <Profile
+        name={raffle.winner.name}
+        thumbnail={raffle.winner.pictureUrl}
+        link={raffle.winner?.profileLink}
+      />
 
       <Title>Estatísticas do sorteio</Title>
 

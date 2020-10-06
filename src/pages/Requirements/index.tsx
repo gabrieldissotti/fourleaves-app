@@ -1,4 +1,10 @@
-import React, { useCallback, useContext, useEffect, useMemo } from 'react';
+import React, {
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from 'react';
 import CheckList from '../../components/CheckList';
 
 import { Container } from './styles';
@@ -11,6 +17,8 @@ import { RaffleContext } from '../../context/RaffleContext';
 const Requirements: React.FC<Props> = ({ navigation }) => {
   const header = useContext(HeaderContext);
   const raffle = useContext(RaffleContext);
+
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const requirements = useMemo<Item[]>(
     () => [
@@ -30,9 +38,13 @@ const Requirements: React.FC<Props> = ({ navigation }) => {
     [],
   );
 
-  const handleRaffle = useCallback(() => {
-    console.log('sort');
-  }, []);
+  const handleRaffle = useCallback(async () => {
+    setIsLoading(true);
+    await raffle.raffleNow();
+    setIsLoading(false);
+
+    navigation.navigate('Awarded');
+  }, [navigation, raffle]);
 
   useEffect(() => {
     header.changeHeaderTitleAndDescription({
@@ -47,9 +59,11 @@ const Requirements: React.FC<Props> = ({ navigation }) => {
       <Previous isOpen navigation={navigation} to="Posts" />
 
       {raffle.requirements.length > 0 ? (
-        <>
-          <Next mode="default" text="Sortear agora" onPress={handleRaffle} />
-        </>
+        <Next
+          mode="default"
+          text={isLoading ? 'Sorteando...' : 'Sortear agora'}
+          onPress={handleRaffle}
+        />
       ) : (
         <Next mode="wizard" step={3} />
       )}

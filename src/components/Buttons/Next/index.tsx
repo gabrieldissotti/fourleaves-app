@@ -40,35 +40,44 @@ const Next: React.FC<Props> = ({
     [step],
   );
 
-  const Wizard = memo(() => (
-    <>
-      <Step status={getStatusByElementStaticStep(1)}>
-        <SimpleLineIcon name="flag" color={colors.blackDefault} size={14} />
-      </Step>
+  const Wizard = useCallback(
+    () => (
+      <>
+        <Step status={getStatusByElementStaticStep(1)}>
+          <SimpleLineIcon name="flag" color={colors.blackDefault} size={14} />
+        </Step>
 
-      <Step status={getStatusByElementStaticStep(2)}>
-        <IconsMinds name="newspaper" color={colors.blackDefault} size={14} />
-      </Step>
+        <Step status={getStatusByElementStaticStep(2)}>
+          <IconsMinds name="newspaper" color={colors.blackDefault} size={14} />
+        </Step>
 
-      <Step status={getStatusByElementStaticStep(3)} fullRightTrace>
-        <IconsMinds name="check" color={colors.blackDefault} size={14} />
-      </Step>
-    </>
-  ));
+        <Step status={getStatusByElementStaticStep(3)} fullRightTrace>
+          <IconsMinds name="check" color={colors.blackDefault} size={14} />
+        </Step>
+      </>
+    ),
+    [getStatusByElementStaticStep],
+  );
 
-  const Default = memo(() => (
-    <>
-      <Text>{text}</Text>
-      <IconsMinds name="right" color={colors.blackDefault} size={24} />
-    </>
-  ));
+  const Default = useCallback(
+    () => (
+      <>
+        <Text>{text}</Text>
+        <IconsMinds name="right" color={colors.blackDefault} size={24} />
+      </>
+    ),
+    [text],
+  );
 
-  const Share = memo(() => (
-    <>
-      <Text>{text}</Text>
-      <SimpleLineIcon name="share" color={colors.blackDefault} size={20} />
-    </>
-  ));
+  const Share = useCallback(
+    () => (
+      <>
+        <Text>{text}</Text>
+        <SimpleLineIcon name="share" color={colors.blackDefault} size={20} />
+      </>
+    ),
+    [text],
+  );
 
   const renderButtonByModeProp = useCallback(() => {
     switch (mode) {
@@ -81,7 +90,7 @@ const Next: React.FC<Props> = ({
       default:
         return <Default />;
     }
-  }, [mode]);
+  }, [mode, text, getStatusByElementStaticStep]);
 
   return (
     <Container onPress={handleNavigation} mode={mode} style={shadows.Default}>

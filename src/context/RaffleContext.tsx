@@ -1,14 +1,24 @@
 import React, { createContext, useCallback, useState } from 'react';
+import FourleavesAPI from '../apis/FourLeaves';
+
+type WinnerState = {
+  id: string;
+  name: string;
+  pictureUrl: string;
+  profileLink?: string;
+};
 
 type RaffleState = {
   pageId?: string;
   postId?: string;
   requirements: string[];
+  winner: WinnerState;
 };
 
 type RaffleContextData = RaffleState & {
   changePageId(pageId: string): void;
   changePostId(postId: string): void;
+  raffleNow(): void;
   toggleCheckedRequirement(value: string): void;
 };
 
@@ -19,6 +29,7 @@ export const RaffleContext = createContext<RaffleContextData>(
 export const RaffleProvider: React.FC = ({ children }) => {
   const [pageId, setPageId] = useState<string>();
   const [postId, setPostId] = useState<string>();
+  const [winner, setWinner] = useState<WinnerState>({} as WinnerState);
   const [requirements, setRequirements] = useState<string[]>([]);
 
   const changePageId = useCallback((updatedPageId: string) => {
@@ -28,6 +39,19 @@ export const RaffleProvider: React.FC = ({ children }) => {
   const changePostId = useCallback((updatedPostId: string) => {
     setPostId(updatedPostId);
   }, []);
+
+  const raffleNow = useCallback(async () => {
+    if (postId) {
+      const { winner: updatedWinner } = await FourleavesAPI.raffleAUserByPost(
+        postId,
+      );
+
+      setWinner(updatedWinner);
+      setPageId(undefined);
+      setPostId(undefined);
+      setRequirements([]);
+    }
+  }, [postId]);
 
   const toggleCheckedRequirement = useCallback(
     (requirementValue: string) => {
@@ -52,7 +76,9 @@ export const RaffleProvider: React.FC = ({ children }) => {
         requirements,
         changePageId,
         changePostId,
+        raffleNow,
         toggleCheckedRequirement,
+        winner,
       }}
     >
       {children}

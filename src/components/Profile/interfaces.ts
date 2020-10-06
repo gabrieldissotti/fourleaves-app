@@ -1,8 +1,8 @@
 import { GestureResponderEvent } from 'react-native';
 
-export interface IProps {
+export type Props = {
   thumbnail: string;
   name: string;
-  navigation: any;
+  link?: string;
   onPress?: (params: GestureResponderEvent) => void;
-}
+};

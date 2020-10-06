@@ -1,6 +1,7 @@
 export interface IProps {
-  to: string;
+  to?: string;
   content: string;
-  navigation: any;
+  navigation?: any;
+  href?: string;
   noWhiteSpaceAround?: boolean;
 }
