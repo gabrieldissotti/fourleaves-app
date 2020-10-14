@@ -92,8 +92,9 @@ class FourLeaves {
     window.location.href = redirectURL;
   }
 
-  async raffleAUserByPost(
+  async raffleAUserByPostAndRequirements(
     postId: string,
+    requirements: string[],
   ): Promise<{
     winner: {
       id: string;
@@ -111,7 +112,7 @@ class FourLeaves {
         pictureUrl: string;
         profileLink?: string;
       };
-    }>('/facebook/raffle', { postId });
+    }>('/facebook/raffle', { postId, requirements });
 
     return response;
   }

@@ -41,17 +41,22 @@ export const RaffleProvider: React.FC = ({ children }) => {
   }, []);
 
   const raffleNow = useCallback(async () => {
-    if (postId) {
-      const { winner: updatedWinner } = await FourleavesAPI.raffleAUserByPost(
-        postId,
-      );
-
-      setWinner(updatedWinner);
-      setPageId(undefined);
-      setPostId(undefined);
-      setRequirements([]);
+    if (!postId) {
+      return;
     }
-  }, [postId]);
+
+    const {
+      winner: updatedWinner,
+    } = await FourleavesAPI.raffleAUserByPostAndRequirements(
+      postId,
+      requirements,
+    );
+
+    setWinner(updatedWinner);
+    setPageId(undefined);
+    setPostId(undefined);
+    setRequirements([]);
+  }, [postId, requirements]);
 
   const toggleCheckedRequirement = useCallback(
     (requirementValue: string) => {
