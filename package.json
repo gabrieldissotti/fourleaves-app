@@ -1,5 +1,9 @@
 {
+  "name": "fourleaves-app",
+  "version": "0.x.x",
+  "description": "fourleaves app",
   "main": "index.ts",
+  "repository": "git@github.com:gabrieldissotti/fourleaves-app.git",
   "author": {
     "name": "Gabriel Dissotti do Nascimento Rodrigues",
     "email": "gabrieldnrodrigues@gmail.com",
