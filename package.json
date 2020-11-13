@@ -1,5 +1,11 @@
 {
   "main": "index.ts",
+  "author": {
+    "name": "Gabriel Dissotti do Nascimento Rodrigues",
+    "email": "gabrieldnrodrigues@gmail.com",
+    "url": "https://github.com/gabrieldissotti"
+  },
+  "license": "Apache 2.0",
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
