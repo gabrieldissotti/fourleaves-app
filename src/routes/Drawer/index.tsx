@@ -38,7 +38,12 @@ const DrawerContainer: React.FC = () => {
             return <Content {...props} />;
           }}
         >
-          <Drawer.Screen name="Screens">
+          <Drawer.Screen
+            name="Screens"
+            options={{
+              header: () => <></>,
+            }}
+          >
             {props => <Screens {...props} style={animations} />}
           </Drawer.Screen>
         </Drawer.Navigator>
