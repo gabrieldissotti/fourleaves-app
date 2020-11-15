@@ -79,6 +79,7 @@ const Posts: React.FC<IProps> = ({ navigation }) => {
       <PostList data={postListData} navigation={navigation} />
 
       <Previous isOpen navigation={navigation} to="Pages" />
+
       <Next mode="wizard" step={2} />
     </Container>
   );

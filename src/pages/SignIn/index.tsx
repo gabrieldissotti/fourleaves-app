@@ -33,6 +33,7 @@ const SignIn: React.FC<IProps> = ({ navigation }) => {
       </Text>
 
       <Previous />
+
       <CustomNext navigation={navigation} />
     </Container>
   );

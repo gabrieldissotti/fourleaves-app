@@ -39,7 +39,9 @@ const SignUp: React.FC<IProps> = ({ navigation }) => {
   return (
     <Container>
       <ThumbList data={pages} navigation={navigation} />
+
       <Previous />
+
       <Next mode="wizard" step={1} />
     </Container>
   );

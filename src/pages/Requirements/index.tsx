@@ -56,9 +56,10 @@ const Requirements: React.FC<Props> = ({ navigation }) => {
   return (
     <Container>
       <CheckList data={requirements} navigation={navigation} />
+
       <Previous isOpen navigation={navigation} to="Posts" />
 
-      {raffle.requirements.length > 0 ? (
+      {raffle.requirements.length ? (
         <Next
           mode="default"
           text={isLoading ? 'Sorteando...' : 'Sortear agora'}
