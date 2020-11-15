@@ -3,10 +3,9 @@ import { IconsMinds, SimpleLineIcon } from '../../../icons';
 
 import { Container, Text } from './styles';
 import { colors, shadows } from '../../../theme';
-import { Step } from './components';
 
 import { Props } from './interfaces';
-import { IStatus } from './components/Step/interfaces';
+import Wizard from './components/Wizzard';
 
 const Next: React.FC<Props> = ({
   text,
@@ -23,41 +22,6 @@ const Next: React.FC<Props> = ({
 
     return navigation?.navigate(to);
   };
-
-  const getStatusByElementStaticStep = useCallback(
-    (elementStep: number): IStatus => {
-      const actualStep = step || 1;
-
-      if (actualStep && actualStep < elementStep) {
-        return 'disabled';
-      }
-      if (actualStep && actualStep > elementStep) {
-        return 'visualized';
-      }
-
-      return 'active';
-    },
-    [step],
-  );
-
-  const Wizard = useCallback(
-    () => (
-      <>
-        <Step status={getStatusByElementStaticStep(1)}>
-          <SimpleLineIcon name="flag" color={colors.blackDefault} size={14} />
-        </Step>
-
-        <Step status={getStatusByElementStaticStep(2)}>
-          <IconsMinds name="newspaper" color={colors.blackDefault} size={14} />
-        </Step>
-
-        <Step status={getStatusByElementStaticStep(3)} fullRightTrace>
-          <IconsMinds name="check" color={colors.blackDefault} size={14} />
-        </Step>
-      </>
-    ),
-    [getStatusByElementStaticStep],
-  );
 
   const Default = useCallback(
     () => (
@@ -79,10 +43,10 @@ const Next: React.FC<Props> = ({
     [text],
   );
 
-  const renderButtonByModeProp = useCallback(() => {
+  const renderButtonByMode = () => {
     switch (mode) {
       case 'wizard':
-        return <Wizard />;
+        return <Wizard step={step} />;
 
       case 'share':
         return <Share />;
@@ -90,11 +54,11 @@ const Next: React.FC<Props> = ({
       default:
         return <Default />;
     }
-  }, [mode, text, getStatusByElementStaticStep]);
+  };
 
   return (
     <Container onPress={handleNavigation} mode={mode} style={shadows.Default}>
-      {renderButtonByModeProp()}
+      {renderButtonByMode()}
     </Container>
   );
 };

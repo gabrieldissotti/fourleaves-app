@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components/native';
 import { IContainer, IRightTrace } from './interfaces';
-import { colors } from '../../../../../theme';
-import { pixels } from '../../../../../functions';
+import { colors } from '../../../../../../../theme';
+import { pixels } from '../../../../../../../functions';
 
 export const Container = styled.View<IContainer>`
   height: ${pixels(38)};
