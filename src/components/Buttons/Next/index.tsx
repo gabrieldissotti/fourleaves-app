@@ -1,11 +1,12 @@
-import React, { memo, useCallback } from 'react';
-import { IconsMinds, SimpleLineIcon } from '../../../icons';
+import React, { useCallback } from 'react';
+import { SimpleLineIcon } from '../../../icons';
 
 import { Container, Text } from './styles';
 import { colors, shadows } from '../../../theme';
 
 import { Props } from './interfaces';
 import Wizard from './components/Wizzard';
+import Default from './components/Default';
 
 const Next: React.FC<Props> = ({
   text,
@@ -22,16 +23,6 @@ const Next: React.FC<Props> = ({
 
     return navigation?.navigate(to);
   };
-
-  const Default = useCallback(
-    () => (
-      <>
-        <Text>{text}</Text>
-        <IconsMinds name="right" color={colors.blackDefault} size={24} />
-      </>
-    ),
-    [text],
-  );
 
   const Share = useCallback(
     () => (
@@ -52,7 +43,7 @@ const Next: React.FC<Props> = ({
         return <Share />;
 
       default:
-        return <Default />;
+        return <Default text={text} />;
     }
   };
 
