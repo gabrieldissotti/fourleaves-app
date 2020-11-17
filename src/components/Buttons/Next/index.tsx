@@ -1,12 +1,12 @@
-import React, { useCallback } from 'react';
-import { SimpleLineIcon } from '../../../icons';
+import React from 'react';
 
-import { Container, Text } from './styles';
-import { colors, shadows } from '../../../theme';
+import { Container } from './styles';
+import { shadows } from '../../../theme';
 
 import { Props } from './interfaces';
 import Wizard from './components/Wizzard';
 import Default from './components/Default';
+import Share from './components/Share';
 
 const Next: React.FC<Props> = ({
   text,
@@ -23,16 +23,6 @@ const Next: React.FC<Props> = ({
 
     return navigation?.navigate(to);
   };
-
-  const Share = useCallback(
-    () => (
-      <>
-        <Text>{text}</Text>
-        <SimpleLineIcon name="share" color={colors.blackDefault} size={20} />
-      </>
-    ),
-    [text],
-  );
 
   const renderButtonByMode = () => {
     switch (mode) {
