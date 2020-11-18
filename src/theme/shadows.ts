@@ -1,9 +1,9 @@
-import { Platform } from 'react-native';
 import colors from './colors';
 import { pixels } from '../functions';
+import { isAndroidVersion, isIOSVersion, isWebVersion } from '../constants';
 
 export const Default = {
-  ...(Platform.OS === 'ios' && {
+  ...(isIOSVersion && {
     shadowColor: colors.blackDefault,
     shadowOffset: {
       width: -2,
@@ -12,16 +12,16 @@ export const Default = {
     shadowOpacity: 0.12,
     shadowRadius: 1.0,
   }),
-  ...(Platform.OS === 'android' && {
+  ...(isAndroidVersion && {
     elevation: 2,
   }),
-  ...(Platform.OS === 'web' && {
+  ...(isWebVersion && {
     boxShadow: `0px 0px ${pixels(4)} ${colors.blackDark1Alpha12}`,
   }),
 };
 
 export const ToDown = {
-  ...(Platform.OS === 'ios' && {
+  ...(isIOSVersion && {
     shadowColor: colors.blackDefault,
     shadowOffset: {
       width: 0,
@@ -30,10 +30,10 @@ export const ToDown = {
     shadowOpacity: 0.18,
     shadowRadius: 1.0,
   }),
-  ...(Platform.OS === 'android' && {
+  ...(isAndroidVersion && {
     elevation: 4,
   }),
-  ...(Platform.OS === 'web' && {
+  ...(isWebVersion && {
     boxShadow: `0px ${pixels(3)} ${pixels(8)} ${colors.blackDark1Alpha12}`,
   }),
 };

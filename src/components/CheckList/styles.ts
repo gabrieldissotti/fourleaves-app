@@ -1,19 +1,19 @@
 import styled, { css } from 'styled-components/native';
 import { vh } from 'react-native-expo-viewport-units';
 import {
-  Platform,
   FlatList as FlatListLib,
   SafeAreaView as SafeAreaViewLib,
 } from 'react-native';
 
 import { pixels } from '../../functions';
+import { isWebVersion } from '../../constants';
 
 export const SafeAreaView = styled(SafeAreaViewLib)``;
 
 export const FlatList = styled(FlatListLib).attrs({
-  contentContainerStyle: { paddingBottom: Platform.OS === 'web' ? 112 : 140 },
+  contentContainerStyle: { paddingBottom: isWebVersion ? 112 : 140 },
 })`
-  ${Platform.OS === 'web' &&
+  ${isWebVersion &&
   css`
     flex: 1;
     min-height: ${pixels(Number(vh(100)) - 138)};

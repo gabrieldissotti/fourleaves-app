@@ -1,7 +1,6 @@
 import styled, { css } from 'styled-components/native';
 import Animated from 'react-native-reanimated';
-import { Platform } from 'react-native';
-import { colors } from '../../theme';
+import { isWebVersion } from '../../constants';
 
 export const Shadow = styled(Animated.View)`
   position: absolute;
@@ -12,7 +11,7 @@ export const Shadow = styled(Animated.View)`
   height: 90%;
 
   background-color: rgba(56, 42, 10, 0.14);
-  ${Platform.OS === 'web' &&
+  ${isWebVersion &&
   css`
     filter: blur(4px);
   `}

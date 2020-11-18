@@ -2,18 +2,18 @@ import styled, { css } from 'styled-components/native';
 import { DrawerItem as DrawerItemLib } from '@react-navigation/drawer';
 import Animated from 'react-native-reanimated';
 import { vh } from 'react-native-expo-viewport-units';
-import { Platform } from 'react-native';
 
 import { pixels } from '../../../../functions';
 import { typography, colors } from '../../../../theme';
 import { IDrawerItem } from './interfaces';
+import { isWebVersion } from '../../../../constants';
 
 export const Container = styled.View`
   position: relative;
   padding: ${pixels(32)} 0;
   padding-left: ${pixels(22)};
 
-  height: ${Platform.OS === 'web' ? vh(100) : vh(97)}px;
+  height: ${isWebVersion ? vh(100) : vh(97)}px;
 `;
 
 export const DrawerItem = styled<IDrawerItem | any>(DrawerItemLib).attrs(
