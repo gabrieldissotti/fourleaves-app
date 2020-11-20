@@ -1,4 +1,6 @@
-<img src="./docs/project-cover.png" alt='capa do projeto' width='100%'  />
+# fourleaves app
+
+<img src="./docs/cover.png" alt='capa do projeto' width='100%' />
 
 > problema com eslint não funcionando?
 > exlua o node_modules e o yarn.lock, de yarn, de reload no vscode e permita que o vscode use o node_modules/eslint
