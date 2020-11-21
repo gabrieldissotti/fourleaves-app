@@ -1,5 +1,5 @@
 import React, { useState, useCallback, useContext } from 'react';
-import { View } from 'react-native';
+import { View, Linking, Alert } from 'react-native';
 
 import {
   Container,
@@ -17,6 +17,8 @@ import { AuthContext } from '../../../../context/AuthContext';
 
 import { SocialNetwork } from '../../../../components/Buttons';
 
+import { links } from '../../../../configs';
+
 const Content: React.FC<any> = ({ navigation, ...rest }) => {
   const auth = useContext(AuthContext);
 
@@ -26,6 +28,19 @@ const Content: React.FC<any> = ({ navigation, ...rest }) => {
     (routeName: string) => {
       setIsFocused(routeName);
       navigation.navigate(routeName);
+    },
+    [navigation],
+  );
+
+  const linkToWeb = useCallback(
+    async (url: string) => {
+      const supported = await Linking.canOpenURL(url);
+
+      if (supported) {
+        await Linking.openURL(url);
+      } else {
+        Alert.alert(`Não foi possível abrir a url (não suportada): ${url}`);
+      }
     },
     [navigation],
   );
@@ -76,7 +91,7 @@ const Content: React.FC<any> = ({ navigation, ...rest }) => {
         <MenuItem>
           <DrawerItem
             label="Termos e Políticas"
-            onPress={() => handleNavigate('SignUp')}
+            onPress={() => linkToWeb(links.privacy_policy)}
           />
           {isFocused === 'SignUp' && <Dash />}
         </MenuItem>
