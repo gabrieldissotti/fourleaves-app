@@ -3,5 +3,5 @@ export interface IProps {
   content: string;
   navigation?: any;
   href?: string;
-  noWhiteSpaceAround?: boolean;
+  isToWeb?: boolean;
 }
