@@ -70,7 +70,7 @@ const Content: React.FC<any> = ({ navigation, ...rest }) => {
         <MenuItem>
           <DrawerItem
             label="Como funciona"
-            onPress={() => handleNavigate('SignUp')}
+            onPress={() => linkToWeb(links.how_it_works)}
           />
           {isFocused === 'SignUp' && <Dash />}
         </MenuItem>
