@@ -1,4 +1,4 @@
-package com.fourleavesapp.generated;
+package fourleav.es.generated;
 
 import java.util.Arrays;
 import java.util.List;

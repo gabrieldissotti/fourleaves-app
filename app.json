@@ -10,6 +10,9 @@
     ],
     "android": {
       "package": "fourleav.es"
+    },
+    "ios": {
+      "bundleIdentifier": "fourleav.es"
     }
   }
 }

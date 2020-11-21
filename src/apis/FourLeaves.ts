@@ -1,6 +1,7 @@
 import axios, { AxiosInstance } from 'axios';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
-import { AsyncStorage, Platform } from 'react-native';
+import { Platform } from 'react-native';
 import { FacebookConfig } from '../configs';
 
 type Page = {
