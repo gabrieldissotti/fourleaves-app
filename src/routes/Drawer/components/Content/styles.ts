@@ -3,6 +3,7 @@ import { DrawerItem as DrawerItemLib } from '@react-navigation/drawer';
 import Animated from 'react-native-reanimated';
 import { vh } from 'react-native-expo-viewport-units';
 
+import { SimpleLineIcon } from '../../../../icons';
 import { pixels } from '../../../../functions';
 import { typography, colors } from '../../../../theme';
 import { IDrawerItem } from './interfaces';
@@ -94,4 +95,8 @@ export const Socials = styled.View`
   position: absolute;
   left: ${pixels(40)};
   bottom: ${pixels(40)};
+`;
+
+export const CustomSimpleLineIcon = styled(SimpleLineIcon)`
+  margin: auto;
 `;

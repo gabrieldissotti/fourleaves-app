@@ -1,5 +1,11 @@
 import React, { useState, useCallback, useContext } from 'react';
-import { View, Linking, Alert, Share } from 'react-native';
+import {
+  View,
+  Linking,
+  Alert,
+  Share,
+  TouchableWithoutFeedback,
+} from 'react-native';
 
 import {
   Container,
@@ -11,6 +17,7 @@ import {
   MenuItem,
   Dash,
   Socials,
+  CustomSimpleLineIcon,
 } from './styles';
 
 import { AuthContext } from '../../../../context/AuthContext';
@@ -19,6 +26,7 @@ import { SocialNetwork } from '../../../../components/Buttons';
 
 import { links, share_app } from '../../../../configs';
 import { isWebPlatform } from '../../../../constants';
+import { colors } from '../../../../theme';
 
 const Content: React.FC<any> = ({ navigation, ...rest }) => {
   const auth = useContext(AuthContext);
@@ -57,17 +65,27 @@ const Content: React.FC<any> = ({ navigation, ...rest }) => {
 
   return (
     <Container {...rest}>
-      <Header>
-        <Frame>
-          <Photo
-            source={{
-              uri: auth?.user?.picture_url,
-            }}
-          />
-        </Frame>
+      <TouchableWithoutFeedback onPress={() => handleNavigate('SignIn')}>
+        <Header>
+          <Frame>
+            {auth?.user?.picture_url ? (
+              <Photo
+                source={{
+                  uri: auth?.user?.picture_url,
+                }}
+              />
+            ) : (
+              <CustomSimpleLineIcon
+                name="user"
+                color={colors.whiteDefault}
+                size={32}
+              />
+            )}
+          </Frame>
 
-        <Name>{auth?.user?.user_name}</Name>
-      </Header>
+          <Name>{auth?.user?.user_name || 'Anônimo'}</Name>
+        </Header>
+      </TouchableWithoutFeedback>
 
       <View>
         <MenuItem>
