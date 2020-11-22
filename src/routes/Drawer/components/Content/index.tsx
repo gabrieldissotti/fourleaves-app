@@ -1,5 +1,5 @@
 import React, { useState, useCallback, useContext } from 'react';
-import { View, Linking, Alert } from 'react-native';
+import { View, Linking, Alert, Share } from 'react-native';
 
 import {
   Container,
@@ -17,7 +17,8 @@ import { AuthContext } from '../../../../context/AuthContext';
 
 import { SocialNetwork } from '../../../../components/Buttons';
 
-import { links } from '../../../../configs';
+import { links, share_app } from '../../../../configs';
+import { isWebVersion } from '../../../../constants';
 
 const Content: React.FC<any> = ({ navigation, ...rest }) => {
   const auth = useContext(AuthContext);
@@ -32,20 +33,27 @@ const Content: React.FC<any> = ({ navigation, ...rest }) => {
     [navigation],
   );
 
-  const linkToWeb = useCallback(
-    async (url: string) => {
-      const supported = await Linking.canOpenURL(url);
+  const linkToWeb = useCallback(async (url: string) => {
+    const supported = await Linking.canOpenURL(url);
 
-      if (supported) {
-        console.log(url);
+    if (supported) {
+      await Linking.openURL(url);
+    } else {
+      Alert.alert(`Não foi possível abrir a url (não suportada): ${url}`);
+    }
+  }, []);
 
-        await Linking.openURL(url);
-      } else {
-        Alert.alert(`Não foi possível abrir a url (não suportada): ${url}`);
-      }
-    },
-    [navigation],
-  );
+  const shareApp = useCallback(async () => {
+    try {
+      await Share.share({
+        message: share_app.message,
+        title: share_app.title,
+        url: share_app.url,
+      });
+    } catch (error) {
+      Alert.alert(`Não foi possível compartilhar`);
+    }
+  }, []);
 
   return (
     <Container {...rest}>
@@ -83,13 +91,12 @@ const Content: React.FC<any> = ({ navigation, ...rest }) => {
           />
           {isFocused === 'SignUp' && <Dash />}
         </MenuItem>
-        <MenuItem>
-          <DrawerItem
-            label="Compartilhar"
-            onPress={() => handleNavigate('SignUp')}
-          />
-          {isFocused === 'SignUp' && <Dash />}
-        </MenuItem>
+        {!isWebVersion && (
+          <MenuItem>
+            <DrawerItem label="Compartilhar" onPress={() => shareApp()} />
+            {isFocused === 'SignUp' && <Dash />}
+          </MenuItem>
+        )}
         <MenuItem>
           <DrawerItem
             label="Termos e Políticas"

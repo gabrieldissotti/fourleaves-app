@@ -13,3 +13,10 @@ export const links = {
     'https://docs.google.com/document/d/17fxEC7TZsxw8DxwxJ4AYhsl7JbQ7IaP0m7-H4Y_dZao/edit?usp=sharing',
   contact_email: 'gabrieldnrodrigues@gmail.com',
 };
+
+export const share_app = {
+  message:
+    'Olha esse app, muito bom pra sortear no facebook: https://fourleav.es',
+  title: 'fourleav.es',
+  url: 'https://fourleav.es',
+};
