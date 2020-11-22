@@ -1,4 +1,5 @@
 import React from 'react';
+import { format, parseISO } from 'date-fns';
 
 import {
   Container,
@@ -9,11 +10,11 @@ import {
   Date,
   SeeMore,
 } from './styles';
-import DefaultThumbnail from '../../../../../assets/example-post.png';
 import { Wrapper, Likes, Comments, Shares } from '../../../Statistics';
 import { shadows } from '../../../../theme';
 
 import { IProps } from './interfaces';
+import { dateFnsOptions } from '../../../../constants';
 
 const Item: React.FC<IProps> = ({
   thumbnail,
@@ -23,6 +24,12 @@ const Item: React.FC<IProps> = ({
   onPress,
   date,
 }) => {
+  const formattedDate = format(
+    parseISO(date),
+    "iiii, d 'de' MMM. 'de' yyyy",
+    dateFnsOptions,
+  );
+
   return (
     <Container
       isFirst={index === 0}
@@ -37,8 +44,7 @@ const Item: React.FC<IProps> = ({
         </Text>
         <Actions>
           <SeeMore>ver mais</SeeMore>
-          {/* <Date>quarta-feira, 25 fev. 2019</Date> */}
-          <Date>{date}</Date>
+          <Date>{formattedDate}</Date>
         </Actions>
       </Wrap>
 

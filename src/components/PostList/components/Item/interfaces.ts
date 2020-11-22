@@ -8,7 +8,7 @@ export interface IProps {
     comments: number;
     shares: number;
   };
-  date: Date;
+  date: string;
   index: number;
   onPress?: (params: GestureResponderEvent) => void;
 }
