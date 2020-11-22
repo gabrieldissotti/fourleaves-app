@@ -40,26 +40,27 @@ export const AuthProvider: React.FC = ({ children }) => {
     return token;
   }, []);
 
-  const finishAuthentication = useCallback(async (param: string | any): Promise<
-    void
-  > => {
-    const token = !isWebPlatform ? param.nativeEvent.data : param;
+  const finishAuthentication = useCallback(
+    async (param: string | any): Promise<void> => {
+      const token = !isWebPlatform ? param.nativeEvent.data : param;
 
-    AsyncStorage.setItem('token', token);
+      AsyncStorage.setItem('token', token);
 
-    const user = await FourLeavesAPI.getUserInfoByStoredToken();
+      const user = await FourLeavesAPI.getUserInfoByStoredToken();
 
-    setAuthData({
-      token,
-      user,
-    });
+      setAuthData({
+        token,
+        user,
+      });
 
-    if (!isWebPlatform) {
-      setIsAuthenticatingOnMobileDevice(false);
-    }
+      if (!isWebPlatform) {
+        setIsAuthenticatingOnMobileDevice(false);
+      }
 
-    setIsReadyToNavigate(true);
-  }, []);
+      setIsReadyToNavigate(true);
+    },
+    [],
+  );
 
   const handleSignIn = useCallback(() => {
     if (isWebPlatform) {
