@@ -7,7 +7,7 @@ import { IContainer } from './interfaces';
 
 export const Container = styled.TouchableOpacity<IContainer>`
   width: 100%;
-  height: ${props => (props.hasThumbnail ? pixels(324) : 'auto')};
+  min-height: ${props => (props.hasThumbnail ? pixels(324) : 'auto')};
   padding: ${pixels(16)};
 
   border-radius: ${pixels(8)};
@@ -49,3 +49,5 @@ export const Date = styled(typography.secondarySmall)`
 `;
 
 export const SeeMore = styled(typography.primaryParagraphLink)``;
+
+export const ClickableArea = styled.TouchableWithoutFeedback``;

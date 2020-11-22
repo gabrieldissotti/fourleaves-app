@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import { format, parseISO } from 'date-fns';
 
 import {
@@ -9,6 +9,7 @@ import {
   Actions,
   Date,
   SeeMore,
+  ClickableArea,
 } from './styles';
 import { Wrapper, Likes, Comments, Shares } from '../../../Statistics';
 import { shadows } from '../../../../theme';
@@ -24,11 +25,20 @@ const Item: React.FC<IProps> = ({
   onPress,
   date,
 }) => {
+  const [isShowingMore, setIsShowingMore] = useState(false);
+
   const formattedDate = format(
     parseISO(date),
     "iiii, d 'de' MMM. 'de' yyyy",
     dateFnsOptions,
   );
+
+  const toggleShowingMore = useCallback(
+    () => setIsShowingMore(!isShowingMore),
+    [isShowingMore],
+  );
+
+  const formattedText = useMemo(() => text || '', [text]);
 
   return (
     <Container
@@ -39,11 +49,17 @@ const Item: React.FC<IProps> = ({
     >
       <Wrap hasThumbnail={!!thumbnail}>
         <Text>
-          {text && text.substring(0, 70)}
-          ...
+          {isShowingMore
+            ? formattedText
+            : `${formattedText?.substring(0, 70)}...`}
         </Text>
         <Actions>
-          <SeeMore>ver mais</SeeMore>
+          {formattedText.length > 70 && (
+            <ClickableArea onPress={toggleShowingMore}>
+              <SeeMore>{isShowingMore ? 'ver menos' : 'ver mais'}</SeeMore>
+            </ClickableArea>
+          )}
+
           <Date>{formattedDate}</Date>
         </Actions>
       </Wrap>
