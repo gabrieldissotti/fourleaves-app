@@ -11,4 +11,5 @@ export const links = {
     'https://docs.google.com/document/d/1A12b9gqPzI3lZmxhwVwUn3uCGzZ8fsvDkOssX1tGH6E/edit?usp=sharing',
   how_it_works:
     'https://docs.google.com/document/d/17fxEC7TZsxw8DxwxJ4AYhsl7JbQ7IaP0m7-H4Y_dZao/edit?usp=sharing',
+  contact_email: 'gabrieldnrodrigues@gmail.com',
 };

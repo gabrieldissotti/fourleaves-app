@@ -37,6 +37,8 @@ const Content: React.FC<any> = ({ navigation, ...rest }) => {
       const supported = await Linking.canOpenURL(url);
 
       if (supported) {
+        console.log(url);
+
         await Linking.openURL(url);
       } else {
         Alert.alert(`Não foi possível abrir a url (não suportada): ${url}`);
@@ -77,7 +79,7 @@ const Content: React.FC<any> = ({ navigation, ...rest }) => {
         <MenuItem>
           <DrawerItem
             label="Contate-nos"
-            onPress={() => handleNavigate('SignUp')}
+            onPress={() => linkToWeb(`mailto:${links.contact_email}`)}
           />
           {isFocused === 'SignUp' && <Dash />}
         </MenuItem>
