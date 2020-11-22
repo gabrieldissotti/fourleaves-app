@@ -122,13 +122,15 @@ const Content: React.FC<any> = ({ navigation, ...rest }) => {
           />
           {isFocused === 'SignUp' && <Dash />}
         </MenuItem>
-        <MenuItem>
-          <DrawerItem
-            label="Sair"
-            onPress={() => handleNavigate('SignIn')}
-            isExit
-          />
-        </MenuItem>
+        {auth?.user && (
+          <MenuItem>
+            <DrawerItem
+              label="Sair"
+              onPress={() => handleNavigate('SignIn')}
+              isExit
+            />
+          </MenuItem>
+        )}
       </View>
       <Socials>
         <SocialNetwork type="facebook" />
