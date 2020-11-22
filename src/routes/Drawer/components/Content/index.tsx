@@ -18,7 +18,7 @@ import { AuthContext } from '../../../../context/AuthContext';
 import { SocialNetwork } from '../../../../components/Buttons';
 
 import { links, share_app } from '../../../../configs';
-import { isWebVersion } from '../../../../constants';
+import { isWebPlatform } from '../../../../constants';
 
 const Content: React.FC<any> = ({ navigation, ...rest }) => {
   const auth = useContext(AuthContext);
@@ -91,7 +91,7 @@ const Content: React.FC<any> = ({ navigation, ...rest }) => {
           />
           {isFocused === 'SignUp' && <Dash />}
         </MenuItem>
-        {!isWebVersion && (
+        {!isWebPlatform && (
           <MenuItem>
             <DrawerItem label="Compartilhar" onPress={() => shareApp()} />
             {isFocused === 'SignUp' && <Dash />}

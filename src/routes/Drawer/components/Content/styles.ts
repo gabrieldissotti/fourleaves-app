@@ -6,14 +6,14 @@ import { vh } from 'react-native-expo-viewport-units';
 import { pixels } from '../../../../functions';
 import { typography, colors } from '../../../../theme';
 import { IDrawerItem } from './interfaces';
-import { isWebVersion } from '../../../../constants';
+import { isWebPlatform } from '../../../../constants';
 
 export const Container = styled.View`
   position: relative;
   padding: ${pixels(32)} 0;
   padding-left: ${pixels(22)};
 
-  height: ${isWebVersion ? vh(100) : vh(97)}px;
+  height: ${isWebPlatform ? vh(100) : vh(97)}px;
 `;
 
 export const DrawerItem = styled<IDrawerItem | any>(DrawerItemLib).attrs(

@@ -3,7 +3,7 @@ import { WebView } from 'react-native-webview';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import FourLeavesAPI from '../apis/FourLeaves';
-import { isWebVersion } from '../constants';
+import { isWebPlatform } from '../constants';
 
 type User = {
   user_id: string;
@@ -43,7 +43,7 @@ export const AuthProvider: React.FC = ({ children }) => {
   const finishAuthentication = useCallback(async (param: string | any): Promise<
     void
   > => {
-    const token = !isWebVersion ? param.nativeEvent.data : param;
+    const token = !isWebPlatform ? param.nativeEvent.data : param;
 
     AsyncStorage.setItem('token', token);
 
@@ -54,7 +54,7 @@ export const AuthProvider: React.FC = ({ children }) => {
       user,
     });
 
-    if (!isWebVersion) {
+    if (!isWebPlatform) {
       setIsAuthenticatingOnMobileDevice(false);
     }
 
@@ -62,7 +62,7 @@ export const AuthProvider: React.FC = ({ children }) => {
   }, []);
 
   const handleSignIn = useCallback(() => {
-    if (isWebVersion) {
+    if (isWebPlatform) {
       FourLeavesAPI.signInWeb();
     } else {
       setIsAuthenticatingOnMobileDevice(true);
@@ -70,7 +70,7 @@ export const AuthProvider: React.FC = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    if (isWebVersion) {
+    if (isWebPlatform) {
       const token = getTokenFromActualUrl();
       if (!token) return;
 

@@ -6,14 +6,14 @@ import {
 } from 'react-native';
 
 import { pixels } from '../../functions';
-import { isWebVersion } from '../../constants';
+import { isWebPlatform } from '../../constants';
 
 export const SafeAreaView = styled(SafeAreaViewLib)``;
 
 export const FlatList = styled(FlatListLib).attrs({
-  contentContainerStyle: { paddingBottom: isWebVersion ? 112 : 140 },
+  contentContainerStyle: { paddingBottom: isWebPlatform ? 112 : 140 },
 })`
-  ${isWebVersion &&
+  ${isWebPlatform &&
   css`
     flex: 1;
     min-height: ${pixels(Number(vh(100)) - 138)};

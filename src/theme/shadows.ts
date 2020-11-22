@@ -1,9 +1,9 @@
 import colors from './colors';
 import { pixels } from '../functions';
-import { isAndroidVersion, isIOSVersion, isWebVersion } from '../constants';
+import { isAndroidPlatform, isIOSPlatform, isWebPlatform } from '../constants';
 
 export const Default = {
-  ...(isIOSVersion && {
+  ...(isIOSPlatform && {
     shadowColor: colors.blackDefault,
     shadowOffset: {
       width: -2,
@@ -12,16 +12,16 @@ export const Default = {
     shadowOpacity: 0.12,
     shadowRadius: 1.0,
   }),
-  ...(isAndroidVersion && {
+  ...(isAndroidPlatform && {
     elevation: 2,
   }),
-  ...(isWebVersion && {
+  ...(isWebPlatform && {
     boxShadow: `0px 0px ${pixels(4)} ${colors.blackDark1Alpha12}`,
   }),
 };
 
 export const ToDown = {
-  ...(isIOSVersion && {
+  ...(isIOSPlatform && {
     shadowColor: colors.blackDefault,
     shadowOffset: {
       width: 0,
@@ -30,10 +30,10 @@ export const ToDown = {
     shadowOpacity: 0.18,
     shadowRadius: 1.0,
   }),
-  ...(isAndroidVersion && {
+  ...(isAndroidPlatform && {
     elevation: 4,
   }),
-  ...(isWebVersion && {
+  ...(isWebPlatform && {
     boxShadow: `0px ${pixels(3)} ${pixels(8)} ${colors.blackDark1Alpha12}`,
   }),
 };
