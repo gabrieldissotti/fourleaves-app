@@ -14,7 +14,7 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "web": "expo start --web",
-    "start": "react-native start",
+    "start": "yarn connect:api && yarn react-native start",
     "test": "jest",
     "connect:api": "adb reverse tcp:3333 tcp:3333"
   },

@@ -43,7 +43,7 @@ export const AuthProvider: React.FC = ({ children }) => {
 
   const finishAuthentication = useCallback(
     async (param: string | any): Promise<void> => {
-      const token = !isWebPlatform ? param.nativeEvent.data : param;
+      const token = isWebPlatform ? param : param.nativeEvent.data;
 
       AsyncStorage.setItem('token', token);
 
