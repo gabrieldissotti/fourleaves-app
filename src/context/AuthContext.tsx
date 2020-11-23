@@ -18,6 +18,7 @@ type AuthState = {
 
 type AuthContextData = AuthState & {
   handleSignIn(data: AuthState): void;
+  handleSignOut(): void;
   isReadyToNavigate: boolean;
 };
 
@@ -70,6 +71,12 @@ export const AuthProvider: React.FC = ({ children }) => {
     }
   }, []);
 
+  const handleSignOut = useCallback(() => {
+    AsyncStorage.clear();
+    setIsAuthenticatingOnMobileDevice(false);
+    setAuthData({} as AuthContextData);
+  }, []);
+
   useEffect(() => {
     if (isWebPlatform) {
       const token = getTokenFromActualUrl();
@@ -98,6 +105,7 @@ export const AuthProvider: React.FC = ({ children }) => {
         token: authData.token,
         isReadyToNavigate,
         handleSignIn,
+        handleSignOut,
       }}
     >
       {children}

@@ -63,6 +63,12 @@ const Content: React.FC<any> = ({ navigation, ...rest }) => {
     }
   }, []);
 
+  const handleSignOut = useCallback(async () => {
+    auth.handleSignOut();
+
+    handleNavigate('SignIn');
+  }, [handleNavigate, auth]);
+
   return (
     <Container {...rest}>
       <TouchableWithoutFeedback onPress={() => handleNavigate('SignIn')}>
@@ -124,11 +130,7 @@ const Content: React.FC<any> = ({ navigation, ...rest }) => {
         </MenuItem>
         {auth?.user && (
           <MenuItem>
-            <DrawerItem
-              label="Sair"
-              onPress={() => handleNavigate('SignIn')}
-              isExit
-            />
+            <DrawerItem label="Sair" onPress={handleSignOut} isExit />
           </MenuItem>
         )}
       </View>
