@@ -43,6 +43,12 @@ export const Container = styled.TouchableOpacity<IContainer>`
     css`
       background-color: ${colors.primaryLight2};
     `}
+
+  ${props =>
+    props.isDisabled &&
+    css`
+      background-color: ${colors.primaryLight3};
+    `}
 `;
 
 export const Text = styled(typography.primaryParagraph)`

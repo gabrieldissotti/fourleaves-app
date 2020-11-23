@@ -64,6 +64,7 @@ const Requirements: React.FC<Props> = ({ navigation }) => {
           mode="default"
           text={isLoading ? 'Sorteando...' : 'Sortear agora'}
           onPress={handleRaffle}
+          isDisabled={isLoading}
         />
       ) : (
         <Next mode="wizard" step={3} />

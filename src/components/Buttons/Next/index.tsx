@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 
 import { Container } from './styles';
 import { shadows } from '../../../theme';
@@ -11,18 +11,24 @@ import Share from './components/Share';
 const Next: React.FC<Props> = ({
   text,
   navigation,
+  isDisabled,
   to,
   mode,
   step,
   onPress,
 }) => {
-  const handleNavigation = () => {
-    if (onPress) {
-      return onPress();
+  const handleNavigation = useCallback((): void => {
+    if (isDisabled) {
+      return;
     }
 
-    return navigation?.navigate(to);
-  };
+    if (onPress) {
+      onPress();
+      return;
+    }
+
+    navigation.navigate(to);
+  }, [isDisabled, navigation, onPress, to]);
 
   const renderButtonByMode = () => {
     switch (mode) {
@@ -38,7 +44,12 @@ const Next: React.FC<Props> = ({
   };
 
   return (
-    <Container onPress={handleNavigation} mode={mode} style={shadows.Default}>
+    <Container
+      onPress={handleNavigation}
+      mode={mode}
+      style={shadows.Default}
+      isDisabled={!!isDisabled}
+    >
       {renderButtonByMode()}
     </Container>
   );
