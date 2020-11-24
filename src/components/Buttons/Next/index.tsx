@@ -27,6 +27,11 @@ const Next: React.FC<Props> = ({
       return;
     }
 
+    if (!navigation) {
+      console.log('doesnt have navigation prop');
+      return;
+    }
+
     navigation.navigate(to);
   }, [isDisabled, navigation, onPress, to]);
 
