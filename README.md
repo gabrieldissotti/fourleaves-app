@@ -2,6 +2,10 @@
 
 <img src="./docs/cover.png" alt='capa do projeto' width='100%' />
 
+## Sobre o projeto
+
+link do protótipo: https://www.figma.com/file/AwUebXoPfSAOMUJufmHytk/Fourleaves?node-id=0%3A1
+
 > problema com eslint não funcionando?
 > exlua o node_modules e o yarn.lock, de yarn, de reload no vscode e permita que o vscode use o node_modules/eslint
 
