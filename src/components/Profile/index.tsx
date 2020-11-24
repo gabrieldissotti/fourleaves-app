@@ -11,7 +11,7 @@ const Profile: React.FC<Props> = ({ thumbnail, name, onPress, link }) => {
       <Thumbnail source={{ uri: thumbnail }} />
       <Wrap>
         <Text>{name}</Text>
-        <Link href={link} content="ver perfil no facebook" noWhiteSpaceAround />
+        {link && <Link href={link} content="ver perfil no facebook" />}
       </Wrap>
     </Container>
   );
