@@ -30,9 +30,10 @@ const Awarded: React.FC<IProps> = ({ navigation }) => {
 
       <Title>Estatísticas do sorteio</Title>
 
-      <Paragraph>1,8 mil concorrentes válidos</Paragraph>
-
-      <Paragraph>136 concorrentes inválidos</Paragraph>
+      <Paragraph>
+        {`${raffle.statistics?.ranked_users_amount || 0} `}
+        concorrentes válidos
+      </Paragraph>
 
       <Previous isOpen isRepeat />
 

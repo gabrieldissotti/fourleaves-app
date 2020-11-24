@@ -8,11 +8,16 @@ type WinnerState = {
   profileLink?: string;
 };
 
+type StatisticsState = {
+  ranked_users_amount: number;
+};
+
 type RaffleState = {
   pageId?: string;
   postId?: string;
   requirements: string[];
   winner: WinnerState;
+  statistics: StatisticsState;
 };
 
 type RaffleContextData = RaffleState & {
@@ -30,6 +35,9 @@ export const RaffleProvider: React.FC = ({ children }) => {
   const [pageId, setPageId] = useState<string>();
   const [postId, setPostId] = useState<string>();
   const [winner, setWinner] = useState<WinnerState>({} as WinnerState);
+  const [statistics, setStatistics] = useState<StatisticsState>(
+    {} as StatisticsState,
+  );
   const [requirements, setRequirements] = useState<string[]>([]);
 
   const changePageId = useCallback((updatedPageId: string) => {
@@ -47,12 +55,14 @@ export const RaffleProvider: React.FC = ({ children }) => {
 
     const {
       winner: updatedWinner,
+      statistics: raffleStatistics,
     } = await FourleavesAPI.raffleAUserByPostAndRequirements(
       postId,
       requirements,
     );
 
     setWinner(updatedWinner);
+    setStatistics(raffleStatistics);
     setPageId(undefined);
     setPostId(undefined);
     setRequirements([]);
@@ -84,6 +94,7 @@ export const RaffleProvider: React.FC = ({ children }) => {
         raffleNow,
         toggleCheckedRequirement,
         winner,
+        statistics,
       }}
     >
       {children}

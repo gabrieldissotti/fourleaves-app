@@ -103,6 +103,9 @@ class FourLeaves {
       pictureUrl: string;
       profileLink?: string;
     };
+    statistics: {
+      ranked_users_amount: number;
+    };
   }> {
     await this.configureTokenToRequest();
 
@@ -112,6 +115,9 @@ class FourLeaves {
         name: string;
         pictureUrl: string;
         profileLink?: string;
+      };
+      statistics: {
+        ranked_users_amount: number;
       };
     }>('/facebook/raffle', { postId, requirements });
 
