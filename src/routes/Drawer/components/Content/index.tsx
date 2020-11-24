@@ -97,7 +97,7 @@ const Content: React.FC<any> = ({ navigation, ...rest }) => {
         <MenuItem>
           <DrawerItem
             label="Sorteio no faceook"
-            onPress={() => handleNavigate('SignIn')}
+            onPress={() => handleNavigate(auth?.user ? 'Pages' : 'SignIn')}
           />
           {isFocused === 'SignIn' && <Dash />}
         </MenuItem>
