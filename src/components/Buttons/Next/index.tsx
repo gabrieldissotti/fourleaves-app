@@ -36,7 +36,7 @@ const Next: React.FC<Props> = ({
         return <Wizard step={step} />;
 
       case 'share':
-        return <Share />;
+        return <Share text={text} />;
 
       default:
         return <Default text={text} />;
