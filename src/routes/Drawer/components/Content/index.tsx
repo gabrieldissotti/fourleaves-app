@@ -101,6 +101,7 @@ const Content: React.FC<any> = ({ navigation, ...rest }) => {
           />
           {isFocused === 'SignIn' && <Dash />}
         </MenuItem>
+
         <MenuItem>
           <DrawerItem
             label="Como funciona"
@@ -108,6 +109,7 @@ const Content: React.FC<any> = ({ navigation, ...rest }) => {
           />
           {isFocused === 'SignUp' && <Dash />}
         </MenuItem>
+
         <MenuItem>
           <DrawerItem
             label="Contate-nos"
@@ -115,12 +117,14 @@ const Content: React.FC<any> = ({ navigation, ...rest }) => {
           />
           {isFocused === 'SignUp' && <Dash />}
         </MenuItem>
+
         {!isWebPlatform && (
           <MenuItem>
             <DrawerItem label="Compartilhar" onPress={() => shareApp()} />
             {isFocused === 'SignUp' && <Dash />}
           </MenuItem>
         )}
+
         <MenuItem>
           <DrawerItem
             label="Termos e Políticas"
@@ -128,6 +132,7 @@ const Content: React.FC<any> = ({ navigation, ...rest }) => {
           />
           {isFocused === 'SignUp' && <Dash />}
         </MenuItem>
+
         {auth?.user && (
           <MenuItem>
             <DrawerItem label="Sair" onPress={handleSignOut} isExit />
@@ -136,6 +141,7 @@ const Content: React.FC<any> = ({ navigation, ...rest }) => {
       </View>
       <Socials>
         <SocialNetwork type="facebook" />
+
         <SocialNetwork type="instagram" />
       </Socials>
     </Container>
