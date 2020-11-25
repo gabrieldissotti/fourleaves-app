@@ -35,7 +35,7 @@ const Awarded: React.FC<IProps> = ({ navigation }) => {
         concorrentes válidos
       </Paragraph>
 
-      <Previous isOpen isRepeat />
+      <Previous />
 
       <Next mode="share" text="Compartilhar" />
 
