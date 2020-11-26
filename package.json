@@ -16,7 +16,8 @@
     "web": "expo start --web",
     "start": "yarn connect:api && yarn react-native start",
     "test": "jest",
-    "connect:api": "adb reverse tcp:3333 tcp:3333"
+    "connect:api": "adb reverse tcp:3333 tcp:3333",
+    "deploy:web:production": "yarn expo build:web && scp -r ./web-build/* root@104.248.13.181:/var/www/sorteiu_app/"
   },
   "dependencies": {
     "@expo-google-fonts/nunito": "^0.1.0",
