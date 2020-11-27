@@ -120,7 +120,10 @@ const Content: React.FC<any> = ({ navigation, ...rest }) => {
         <MenuItem>
           <DrawerItem
             label="Contate-nos"
-            onPress={() => linkToWeb(`mailto:${links.contact_email}`)}
+            onPress={() => {
+              linkToWeb(`mailto:${links.contact_email}`);
+              handleNavigate('Contact');
+            }}
           />
           {isFocused === 'SignUp' && <Dash />}
         </MenuItem>

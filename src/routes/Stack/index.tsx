@@ -5,7 +5,14 @@ import { useIsDrawerOpen } from '@react-navigation/drawer';
 import Header from './components/Header';
 import colors from '../../theme/colors';
 
-import { SignIn, Pages, Posts, Requirements, Awarded } from '../../pages';
+import {
+  SignIn,
+  Pages,
+  Posts,
+  Requirements,
+  Awarded,
+  Contact,
+} from '../../pages';
 import { IProps } from './interfaces';
 
 import { Shadow } from './styles';
@@ -45,6 +52,7 @@ const Screens: React.FC<IProps> = ({ navigation, style }) => {
             <Stack.Screen name="Posts" component={Posts} />
             <Stack.Screen name="Requirements" component={Requirements} />
             <Stack.Screen name="Awarded" component={Awarded} />
+            <Stack.Screen name="Contact" component={Contact} />
           </Stack.Navigator>
         </RaffleProvider>
       </Animated.View>

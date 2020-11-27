@@ -32,6 +32,10 @@ const Header: React.FC<IProps> = () => {
       title: 'Premiação',
       description: 'confira quem foi premiado',
     },
+    Contact: {
+      title: 'Contate-nos',
+      description: 'saiba como entrar em contato conosco',
+    },
   };
 
   return (
