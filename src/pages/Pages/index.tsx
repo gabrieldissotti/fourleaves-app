@@ -1,7 +1,5 @@
-import React, { useCallback, useContext, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import ThumbList from '../../components/ThumbList';
-
-import { HeaderContext } from '../../context/HeaderContext';
 
 import { Container } from './styles';
 import { Previous, Next } from '../../components/Buttons';
@@ -10,7 +8,6 @@ import { IProps, Page, PageFormatted } from './interfaces';
 
 const SignUp: React.FC<IProps> = ({ navigation }) => {
   const [pages, setPages] = useState<PageFormatted[]>([]);
-  const header = useContext(HeaderContext);
 
   const fetchPages = useCallback(async () => {
     const updatedPagesList: Page[] = await FourLeavesAPI.getPagesWithPosts();
@@ -28,13 +25,8 @@ const SignUp: React.FC<IProps> = ({ navigation }) => {
   }, []);
 
   useEffect(() => {
-    header.changeHeaderTitleAndDescription({
-      title: 'Selecione a página',
-      description: 'em qual página você publicou o sorteio?',
-    });
-
     fetchPages();
-  }, []);
+  }, [fetchPages]);
 
   return (
     <Container>

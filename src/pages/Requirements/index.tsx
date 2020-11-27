@@ -1,21 +1,13 @@
-import React, {
-  useCallback,
-  useContext,
-  useEffect,
-  useMemo,
-  useState,
-} from 'react';
+import React, { useCallback, useContext, useMemo, useState } from 'react';
 import CheckList from '../../components/CheckList';
 
 import { Container } from './styles';
 import { Previous, Next } from '../../components/Buttons';
 
 import { Props, Item } from './interfaces';
-import { HeaderContext } from '../../context/HeaderContext';
 import { RaffleContext } from '../../context/RaffleContext';
 
 const Requirements: React.FC<Props> = ({ navigation }) => {
-  const header = useContext(HeaderContext);
   const raffle = useContext(RaffleContext);
 
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -45,13 +37,6 @@ const Requirements: React.FC<Props> = ({ navigation }) => {
 
     navigation.navigate('Awarded');
   }, [navigation, raffle]);
-
-  useEffect(() => {
-    header.changeHeaderTitleAndDescription({
-      title: 'Selecione os critérios',
-      description: 'como as pessoas podem participar?',
-    });
-  }, []);
 
   return (
     <Container>

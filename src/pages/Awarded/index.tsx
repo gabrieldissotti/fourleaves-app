@@ -6,19 +6,10 @@ import { Previous, Next } from '../../components/Buttons';
 import Paragraph from '../../components/Text/Paragraph';
 
 import { IProps } from './interfaces';
-import { HeaderContext } from '../../context/HeaderContext';
 import { RaffleContext } from '../../context/RaffleContext';
 
 const Awarded: React.FC<IProps> = ({ navigation }) => {
-  const header = useContext(HeaderContext);
   const raffle = useContext(RaffleContext);
-
-  useEffect(() => {
-    header.changeHeaderTitleAndDescription({
-      title: 'Premiação',
-      description: 'confira quem foi premiado',
-    });
-  }, []);
 
   return (
     <Container>

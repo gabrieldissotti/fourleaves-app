@@ -1,4 +1,4 @@
-import React, { useCallback, useContext, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { useRoute, RouteProp } from '@react-navigation/native';
 
 import { Container } from './styles';
@@ -6,7 +6,6 @@ import { Previous, Next } from '../../components/Buttons';
 import PostList from '../../components/PostList';
 
 import { IProps } from './interfaces';
-import { HeaderContext } from '../../context/HeaderContext';
 
 type Post = {
   created_time: Date;
@@ -45,8 +44,6 @@ const Posts: React.FC<IProps> = ({ navigation }) => {
   );
   const { params } = useRoute<UseRouteProp>();
 
-  const header = useContext(HeaderContext);
-
   const getPostListData = useCallback(
     (): FormattedPost[] =>
       params.posts?.map(post => ({
@@ -64,11 +61,6 @@ const Posts: React.FC<IProps> = ({ navigation }) => {
   );
 
   useEffect(() => {
-    header.changeHeaderTitleAndDescription({
-      title: 'Selecione a publicação',
-      description: 'qual é a publicação do sorteio?',
-    });
-
     const updatedPostList = getPostListData();
 
     if (updatedPostList) setPostListData(updatedPostList);
