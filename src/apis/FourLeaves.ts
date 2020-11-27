@@ -71,8 +71,8 @@ class FourLeaves {
 
     const permissions = [
       'email',
-      'user_photos',
-      'user_friends',
+      // 'user_photos',
+      // 'user_friends',
       'pages_show_list',
       'public_profile',
       'pages_manage_posts',
