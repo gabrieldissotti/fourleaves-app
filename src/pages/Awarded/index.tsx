@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import Profile from '../../components/Profile';
 
 import { Container, Title } from './styles';
@@ -27,8 +27,6 @@ const Awarded: React.FC<IProps> = ({ navigation }) => {
       </Paragraph>
 
       <Previous />
-
-      <Next mode="share" text="Compartilhar" />
 
       <Next
         mode="newRaffle"
