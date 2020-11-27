@@ -150,9 +150,15 @@ const Content: React.FC<any> = ({ navigation, ...rest }) => {
         )}
       </View>
       <Socials>
-        <SocialNetwork type="facebook" />
+        <SocialNetwork
+          type="facebook"
+          onPress={() => linkToWeb(links.facebook_page)}
+        />
 
-        <SocialNetwork type="instagram" />
+        <SocialNetwork
+          type="instagram"
+          onPress={() => linkToWeb(links.instagram_page)}
+        />
       </Socials>
 
       <BuildVersion>{`v${buildVersion}`}</BuildVersion>

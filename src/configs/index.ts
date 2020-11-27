@@ -14,6 +14,8 @@ export const links = {
   how_it_works:
     'https://docs.google.com/document/d/17fxEC7TZsxw8DxwxJ4AYhsl7JbQ7IaP0m7-H4Y_dZao/edit?usp=sharing',
   contact_email: 'gabrieldnrodrigues@gmail.com',
+  facebook_page: 'https://www.facebook.com/sorteiu',
+  instagram_page: 'https://www.instagram.com/sorteiucom/',
 };
 
 export const share_app = {

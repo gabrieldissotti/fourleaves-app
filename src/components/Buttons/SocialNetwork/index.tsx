@@ -4,11 +4,14 @@ import { TouchableOpacity } from 'react-native';
 import { Container, CustomIcons } from './styles';
 import { shadows } from '../../../theme';
 
-import { IProps } from './interfaces';
+export type Props = {
+  type: 'facebook' | 'instagram';
+  onPress(): void;
+};
 
-const SocialNetwork: React.FC<IProps> = ({ type }) => {
+const SocialNetwork: React.FC<Props> = ({ type, onPress }) => {
   return (
-    <TouchableOpacity>
+    <TouchableOpacity onPress={onPress}>
       <Container style={shadows.ToDown}>
         <CustomIcons icon={type} />
       </Container>
