@@ -1,7 +1,9 @@
 export const FacebookConfig = {
-  appId: 2684808968425884,
+  appId: __DEV__ ? 2684808968425884 : 378481756709522,
   apiVersion: 'v8.0',
-  redirectURI: `http://localhost:3333/facebook/sessions/`,
+  redirectURI: __DEV__
+    ? 'http://localhost:3333/facebook/sessions/'
+    : 'https://api.sorteiu.com/facebook/sessions/',
 };
 
 export const links = {

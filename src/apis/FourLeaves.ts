@@ -24,7 +24,7 @@ class FourLeaves {
 
   constructor() {
     this.axios = axios.create({
-      baseURL: 'http://localhost:3333',
+      baseURL: __DEV__ ? 'http://localhost:3333' : 'https://api.sorteiu.com',
     });
   }
 
