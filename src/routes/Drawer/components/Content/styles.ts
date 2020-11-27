@@ -100,3 +100,11 @@ export const Socials = styled.View`
 export const CustomSimpleLineIcon = styled(SimpleLineIcon)`
   margin: auto;
 `;
+
+export const BuildVersion = styled(typography.secondarySmall)`
+  color: ${colors.primaryLight9};
+
+  position: absolute;
+  right: 0;
+  bottom: ${pixels(40)};
+`;

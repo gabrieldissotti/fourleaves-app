@@ -1,7 +1,3 @@
-import packageJson from '../../package.json';
-
-console.log(`APP version: `, packageJson.version);
-
 export const FacebookConfig = {
   appId: __DEV__ ? 2684808968425884 : 378481756709522,
   apiVersion: 'v8.0',

@@ -1,6 +1,6 @@
 {
   "name": "fourleaves-app",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "fourleaves app",
   "main": "index.ts",
   "repository": "git@github.com:gabrieldissotti/fourleaves-app.git",
@@ -17,7 +17,9 @@
     "start": "yarn connect:api && yarn react-native start",
     "test": "jest",
     "connect:api": "adb reverse tcp:3333 tcp:3333",
-    "deploy:web:production": "yarn expo build:web && scp -r ./web-build/* root@104.248.13.181:/var/www/sorteiu_app/"
+    "update:version": "yarn bump --all --commit --tag --push",
+    "deploy:web:production": "yarn expo build:web && scp -r ./web-build/* root@104.248.13.181:/var/www/sorteiu_app/",
+    "release:web": "yarn update:version && yarn deploy:web:production"
   },
   "dependencies": {
     "@expo-google-fonts/nunito": "^0.1.0",

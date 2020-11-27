@@ -17,6 +17,7 @@ import {
   MenuItem,
   Dash,
   Socials,
+  BuildVersion,
   CustomSimpleLineIcon,
 } from './styles';
 
@@ -25,7 +26,7 @@ import { AuthContext } from '../../../../context/AuthContext';
 import { SocialNetwork } from '../../../../components/Buttons';
 
 import { links, share_app } from '../../../../configs';
-import { isWebPlatform } from '../../../../constants';
+import { buildVersion, isWebPlatform } from '../../../../constants';
 import { colors } from '../../../../theme';
 
 const Content: React.FC<any> = ({ navigation, ...rest }) => {
@@ -144,6 +145,8 @@ const Content: React.FC<any> = ({ navigation, ...rest }) => {
 
         <SocialNetwork type="instagram" />
       </Socials>
+
+      <BuildVersion>{`v${buildVersion}`}</BuildVersion>
     </Container>
   );
 };

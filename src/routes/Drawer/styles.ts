@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components/native';
-import { isWebPlatform } from '../../constants';
+import { isDesktopPlatform } from '../../constants';
 import { pixels } from '../../functions';
 import colors from '../../theme/colors';
 
@@ -8,7 +8,7 @@ export const Container = styled.View`
 
   overflow: hidden;
 
-  ${isWebPlatform &&
+  ${isDesktopPlatform &&
   css`
     max-width: ${pixels(600)};
     margin: auto;
@@ -16,6 +16,5 @@ export const Container = styled.View`
     height: 100%;
     width: 100%;
     border: 1px solid #f1f1f1;
-    border-radius: ${pixels(16)};
   `}
 `;
