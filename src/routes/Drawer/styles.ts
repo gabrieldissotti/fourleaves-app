@@ -15,6 +15,11 @@ export const Container = styled.View`
     position: relative;
     height: 100%;
     width: 100%;
-    border: 1px solid #f1f1f1;
   `}
+`;
+
+export const Background = styled.View`
+  background-color: #fafafa;
+  height: 100%;
+  width: 100%;
 `;
