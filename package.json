@@ -1,6 +1,6 @@
 {
   "name": "fourleaves-app",
-  "version": "0.x.x",
+  "version": "0.0.2",
   "description": "fourleaves app",
   "main": "index.ts",
   "repository": "git@github.com:gabrieldissotti/fourleaves-app.git",
@@ -53,6 +53,7 @@
   },
   "devDependencies": {
     "@babel/core": "~7.9.0",
+    "@jsdevtools/version-bump-prompt": "^6.1.0",
     "@types/date-fns": "^2.6.0",
     "@types/react": "~16.9.35",
     "@types/react-dom": "^16.9.8",
