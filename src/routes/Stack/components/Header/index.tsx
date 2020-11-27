@@ -13,7 +13,7 @@ const Header: React.FC<IProps> = () => {
 
   const options: any = {
     SignIn: {
-      title: 'fourleav.es',
+      title: 'sorteiu',
       description: 'uma nova experiência',
     },
     Pages: {

@@ -1,6 +1,6 @@
 {
   "name": "fourleaves-app",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "fourleaves app",
   "main": "index.ts",
   "repository": "git@github.com:gabrieldissotti/fourleaves-app.git",
