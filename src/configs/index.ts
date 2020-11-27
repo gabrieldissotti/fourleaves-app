@@ -6,6 +6,8 @@ export const FacebookConfig = {
     : 'https://api.sorteiu.com/facebook/sessions/',
 };
 
+console.log('Actual facebook config', FacebookConfig);
+
 export const links = {
   privacy_policy:
     'https://docs.google.com/document/d/1-rB_6C7guV3K_c95GR5g5vsCyzAqBjztBTJNG4rj-CU/edit?usp=sharing',
