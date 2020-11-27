@@ -43,6 +43,12 @@ const Content: React.FC<any> = ({ navigation, ...rest }) => {
   );
 
   const linkToWeb = useCallback(async (url: string) => {
+    if (isWebPlatform && !url.includes('mailto:')) {
+      window.open(url, '_blank');
+
+      return;
+    }
+
     const supported = await Linking.canOpenURL(url);
 
     if (supported) {
