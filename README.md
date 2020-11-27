@@ -4,7 +4,15 @@
 
 ## Sobre o projeto
 
-link do protótipo: https://www.figma.com/file/AwUebXoPfSAOMUJufmHytk/Fourleaves?node-id=0%3A1
+> Estarei organizando o README e demais documentações nas próximas semanas
+
+### Links
+
+[Protótipo do app](https://www.figma.com/file/AwUebXoPfSAOMUJufmHytk/Fourleaves?node-id=0%3A1)
+
+[Contribuir para o projeto](./CONTRIBUTING.md)
+
+### Problemas conhecidos
 
 > problema com eslint não funcionando?
 > exlua o node_modules e o yarn.lock, de yarn, de reload no vscode e permita que o vscode use o node_modules/eslint
